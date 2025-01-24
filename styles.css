@@ -1,0 +1,91 @@
+/* General */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+    box-sizing: border-box;
+  }
+  
+  /* Splash Screen */
+  .splash-screen {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .logo {
+    width: 250px; /* Tamaño reducido para móviles */
+    animation: fade-in 1.5s ease-out;
+  }
+  
+  /* Login Screen */
+  .login-container {
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 400px; /* No crece más allá de 400px para tablets */
+    text-align: center;
+    background: rgba(255, 255, 255, 0.788);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  .login-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%; /* Asegura que se adapte al contenedor */
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Animations */
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Media Queries */
+  @media (min-width: 768px) {
+    .logo {
+      width: 150px; /* Más grande en tablets */
+    }
+  
+    .login-container {
+      padding: 30px;
+    }
+  }
+  
