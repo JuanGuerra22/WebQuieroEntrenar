@@ -4,8 +4,6 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
   }
@@ -26,16 +24,29 @@ body {
   }
   
   .logo {
-    width: 250px; /* Tamaño reducido para móviles */
+    width: 250px;
     animation: fade-in 1.5s ease-out;
+  }
+
+  .logo-izq{
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .logo-izq img{
+    max-width: 200px;
+
   }
   
   /* Login Screen */
   .login-container {
-    width: 100%; /* Ocupa el 90% del ancho de la pantalla */
-    max-width: 400px; /* No crece más allá de 400px para tablets */
-    text-align: center;
+    display: flex ;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 90%;
     padding: 20px;
     border-radius: 10px;
   }
@@ -43,6 +54,7 @@ body {
   .login-form {
     display: flex;
     flex-direction: column;
+    width: 90%;
     gap: 15px;
   }
   
