@@ -6,6 +6,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     min-height: 100vh;
     box-sizing: border-box;
     font-family: "Karantina", serif;
@@ -124,11 +125,13 @@ body {
   .dias-container{
     display: flex;
     margin-top: 70px;
+    width: 100%;
   }
   .card-dias{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    justify-content: center;
     list-style: none;
     padding: 0;
   }
