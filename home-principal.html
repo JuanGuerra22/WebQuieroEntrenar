@@ -21,7 +21,7 @@
         <div class="titulo">
             <h1>Semanas de Entrenamiento</h1>
         </div>
-        <ul class="card-sem"> 
+        <ul class="semana-card"> 
             <li>Sem 01</li>
             <li>Sem 02</li>
             <li>Sem 03</li>
@@ -29,16 +29,21 @@
         </ul>
     </section>
 
-    <section class="dias-container">
-        <ul class="card-dias"> 
-            <li>Lunes</li>
-            <li>Martes</li>
-            <li>Miércoles</li>
-            <li>Jueves</li>
-            <li>Viernes</li>
-            <li>Sábado</li>
-        </ul>
-    </section>
+    <div class="cards">
+       <button class="card" id="btn-dia">Lunes</button>
+       <ul class="ejercicios visible" id="ejercicio"> 
+        <li>Fly peck deck M</li>
+        <li>Press en banco plano B</li>
+        <li>Pull up bodyweight</li>
+        <li>Row seated B C</li>
+    </ul>
+       <button class="card">Martes</button>
+       <button class="card">Miércoles</button>
+       <button class="card">Jueves</button>
+       <button class="card">Viernes</button>
+       <button class="card">Sábado</button>
+    </div>
+ 
     
     
     <section class="navbar-container">
@@ -50,5 +55,6 @@
             </ul>
           </nav>
     </section>
+    <script src="script.js"></script>
 </body>
 </html>
