@@ -4,10 +4,18 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     min-height: 100vh;
     box-sizing: border-box;
+    font-family: "Karantina", serif;
   }
-  
+  .karantina-regular {
+    font-family: "Karantina", serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
   :root {
     --color-primario: #00D5E5;
     --color-secundario: #0071A6;
@@ -23,7 +31,13 @@ body {
     width: 100%;
     height: 100vh;
   }
-  
+  .titulo{
+    margin-top: 70px;
+    width: 100%;
+    text-align: center;
+    font-size: 1.3rem;
+    align-items: center;
+  }
   .logo {
     width: 250px;
     animation: fade-in 1.5s ease-out;
@@ -37,7 +51,6 @@ body {
 
   .logo-izq img{
     max-width: 200px;
-
   }
   
   /* Login Screen */
@@ -85,17 +98,16 @@ body {
   /*-----------------Semanas de entrenamiento principal* ----------*/ 
 
   .semanas-container{
-    display: flex;
-    flex-direction: column;
-    margin-top: 70px;
-    align-items: center;
+   display: flex;
+   flex-direction: column;
   }
+
 
   .card-sem{
     display: flex;
     width: 100%;
     list-style: none;
-    padding: 0;
+    padding: 0px;
   }
 
   .card-sem li{
@@ -105,12 +117,17 @@ body {
     margin: 5px;
     border-radius: 10px;
     text-align: center;
+    line-height: 80px;
+    font-size: 2rem;
   }
 
+  .dias-container{
+    display: flex;
+    margin-top: 70px;
+  }
   .card-dias{
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
     width: 100%;
     list-style: none;
     padding: 0;
@@ -122,9 +139,53 @@ body {
     background-color:var(--color-base-dias);
     margin: 5px;
     border-radius: 10px;
+    justify-content: center;
+    align-items: center;
     text-align: center;
+    line-height: 100px;
+    font-size: 2rem;
+    font-family: "Karantina", serif;
   }
 
+
+  /*barra de navegacion ----------------------------------------------------*/
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff; /* Cambia el color de fondo si lo deseas */
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .navbar li {
+    margin: 0 25px;
+  }
+  
+  .navbar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 1.1rem;
+  }
+  
+  .navbar i {
+    margin-right: 5px;
+  }
   
   /* Animations */
   @keyframes fade-in {
