@@ -18,6 +18,17 @@ body {
   --color-claro-dias: #F5F5F5;
 }
 
+/*------------------------iconos-------------------------------*/
+
+.material-symbols-outlined {
+  padding-left: 10px;
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 700,
+  'GRAD' 0,
+  'opsz' 24
+}
+
 /* ---------------------- Splash Screen ---------------------- */
 .splash-screen {
   background-color: white;
@@ -123,7 +134,7 @@ button:hover {
   white-space: wrap;
 }
 
-/*------------------------tabla--------------------------------*/
+/*------------------------tablas--------------------------------*/
 table {
   border-collapse: collapse;
   width: 100%;
