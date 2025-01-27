@@ -3,22 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login-QuieroEntrenar</title>
+  <title>Login - Quiero Entrenar</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="login-container">
-
     <img src="img/logo01.png" alt="Gym App Logo" class="logo">
     <h1>Inicia sesión</h1>
-    <form class="login-form">
-      <input type="email" id="email" placeholder="ejemplo@correo.com" required>
+    
+    <form class="login-form" id="loginForm">
+      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
       
-      <input type="password" id="password" placeholder="Tu contraseña" required>
+      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
       
       <button type="button" onclick="irHomePrincipal()">Entrar</button>
     </form>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

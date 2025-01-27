@@ -3,49 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Karantina:wght@300;400;700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <title>Home-Sem. Entre.</title>
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <meta name="description" content="Aplicación para planificar semanas de entrenamiento en el gimnasio.">
+    <title>Home - Semanas de Entrenamiento</title>
 </head>
 <body>
-    
-    <div class="logo-izq">
-        <img src="img/logo01.png" alt="Gym App Logo" class="logo">
-    </div>
-    
 
-    <section class="semanas-container">
-        <div class="titulo">
-            <h1>Semanas de Entrenamiento</h1>
-        </div>
-        <ul class="semana-card"> 
-            <li>Sem 01</li>
-            <li>Sem 02</li>
-            <li>Sem 03</li>
-            <li>Sem 04</li>
-        </ul>
-    </section>
-
-    <div class="cards">
-       <button class="card" id="btn-dia">Lunes</button>
-       <ul class="ejercicios visible" id="ejercicio"> 
-        <li>Fly peck deck M</li>
-        <li>Press en banco plano B</li>
-        <li>Pull up bodyweight</li>
-        <li>Row seated B C</li>
-    </ul>
-       <button class="card">Martes</button>
-       <button class="card">Miércoles</button>
-       <button class="card">Jueves</button>
-       <button class="card">Viernes</button>
-       <button class="card">Sábado</button>
-    </div>
- 
-    
-    
+    <!-- Barra de navegación -->
     <section class="navbar-container">
         <nav class="navbar">
             <ul>
@@ -53,8 +20,80 @@
               <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
               <li><a href="#"><i class="fas fa-file"></i> Informe</a></li>
             </ul>
-          </nav>
+        </nav>
     </section>
+
+    <!-- Logo -->
+    <div class="logo-izq">
+        <img src="img/logo01.png" alt="Gym App Logo" class="logo">
+    </div>
+
+    <!-- Listado de semanas -->
+    <section class="semanas-container">
+        <div class="titulo">
+            <h1>Semanas de Entrenamiento</h1>
+        </div>
+        <ul class="semana-card"> 
+            <li><a href="#">Sem 01</a></li>
+            <li><a href="#">Sem 02</a></li>
+            <li><a href="#">Sem 03</a></li>
+            <li><a href="#">Sem 04</a></li>
+        </ul>
+    </section>
+
+    <!-- Listado de días -->
+    <section class="dias-container">
+        <div class="cards">
+            <button class="card" id="btn-lunes" type="button">Lunes</button>
+            <ul class="ejercicios" id="ejer-lunes">
+                <li>Fly peck deck M</li>
+                <li>Press en banco plano B</li>
+                <li>Pull up bodyweight</li>
+                <li>Row seated B C</li>
+            </ul>
+
+            <button class="card" id="btn-martes" type="button">Martes</button>
+            <ul class="ejercicios" id="ejer-martes">
+                <li>Sentadillas barra libre</li>
+                <li>Leg press 45°</li>
+                <li>Extensiones de pierna</li>
+                <li>Abdominales crunch</li>
+            </ul>
+
+            <button class="card" id="btn-miercoles" type="button">Miércoles</button>
+            <ul class="ejercicios" id="ejer-miercoles">
+                <li>Deadlift</li>
+                <li>Press militar</li>
+                <li>Elevaciones laterales</li>
+                <li>Face pulls</li>
+            </ul>
+
+            <button class="card" id="btn-jueves" type="button">Jueves</button>
+            <ul class="ejercicios" id="ejer-jueves">
+                <li>Dominadas</li>
+                <li>Barbell rows</li>
+                <li>Remo con mancuernas</li>
+                <li>Curl bíceps</li>
+            </ul>
+
+            <button class="card" id="btn-viernes" type="button">Viernes</button>
+            <ul class="ejercicios" id="ejer-viernes">
+                <li>Press de banca inclinado</li>
+                <li>Press con mancuernas</li>
+                <li>Cruces en polea</li>
+                <li>Fondos</li>
+            </ul>
+
+            <button class="card" id="btn-sabado" type="button">Sábado</button>
+            <ul class="ejercicios" id="ejer-sabado">
+                <li>Sprints</li>
+                <li>Circuito funcional</li>
+                <li>Plancha</li>
+                <li>Estiramientos</li>
+            </ul>
+        </div>
+    </section>
+
     <script src="script.js"></script>
 </body>
 </html>

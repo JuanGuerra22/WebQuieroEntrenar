@@ -1,241 +1,232 @@
 /* General */
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    box-sizing: border-box;
-    font-family: "Karantina", serif;
-  }
-  .karantina-regular {
-    font-family: "Karantina", serif;
-    font-weight: 400;
-    font-style: normal;
-  }
+  margin: 0;
+  padding: 0;
+  font-family: 'Dosis', serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
 
-  :root {
-    --color-primario: #00D5E5;
-    --color-secundario: #0071A6;
-    --color-base-dias: #515151;
-    --color-claro-dias: #F5F5F5;
-  }
-  
-  /* Splash Screen */
-  .splash-screen {
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-  }
-  .titulo{
-    margin-top: 70px;
-    width: 100%;
-    text-align: center;
-    font-size: 1.3rem;
-    align-items: center;
-  }
-  .logo {
-    width: 250px;
-    animation: fade-in 1.5s ease-out;
-  }
+:root {
+  --color-primario: #00D5E5;
+  --color-secundario: #0071A6;
+  --color-base-dias: #515151;
+  --color-claro-dias: #F5F5F5;
+}
 
-  .logo-izq{
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+/* ---------------------- Splash Screen ---------------------- */
+.splash-screen {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        opacity: 1;
+        transition: opacity 1s ease-out;
+}
 
-  .logo-izq img{
-    max-width: 200px;
-  }
-  
-  /* Login Screen */
-  .login-container {
-    display: flex ;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    max-width: 400px;
-    width: 90%;
-    padding: 20px;
-    border-radius: 10px;
-  }
-  
-  .login-form {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    gap: 15px;
-  }
-  
-  .login-form input {
-    padding: 12px;
-    font-size: 16px;
-    border: 1px solid var(--color-primario);
-    border-radius: 5px;
-    width: 100%; /* Asegura que se adapte al contenedor */
-    box-sizing: border-box;
-  }
-  
-  button {
-    padding: 12px;
-    background-color: var(--color-primario);
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: var(--color-secundario);
-  }
+.logo {
+  width: 200px;
+  animation: fade-in 1.5s ease-out;
+}
 
-  /*-----------------Semanas de entrenamiento principal* ----------  */ 
+/* ---------------------- Login Screen ---------------------- */
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 400px;
+  width: 90%;
+  padding: 20px;
+  border-radius: 10px;
+}
 
-  .semanas-container{
-   display: flex;
-   flex-direction: column;
-  }
+.login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 15px;
+}
 
+.login-form input {
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid var(--color-primario);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-  .semana-card{
-    display: flex;
-    width: 100%;
-    list-style: none;
-    padding: 0px;
-  }
+button {
+  padding: 12px;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Dosis', serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
 
-  .semana-card li{
-    width: 80px;
-    height: 90px;
-    background-color:var(--color-primario);
-    margin: 5px;
-    border-radius: 10px;
-    text-align: center;
-    line-height: 80px;
-    font-size: 2rem;
-  }
+button:hover {
+  background-color: var(--color-secundario);
+  transform: scale(1.05);
+}
 
+/* ---------------------- Sección de semanas ---------------------- */
+.semanas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
 
-  .card-dias{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-    margin-top: 55PX;
-  }
+.titulo {
+  width: 100%;
+  text-align: center;
+  font-size: 1.3rem;
+}
 
-/*----------cards---------*/
-.cards{
+.semana-card {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  gap: 10px;
+}
+
+.semana-card li {
+  width: 80px;
+  height: 90px;
+  background-color: var(--color-primario);
+  border-radius: 10px;
+  text-align: center;
+  line-height: 90px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+}
+
+/* ---------------------- Cards de días ---------------------- */
+.cards {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  }
-
+  gap: 10px;
+  margin-top: 30px;
+}
 
 .card {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 30px;
-  padding: 5px;
-  margin: 3px;
+  max-width: 400px;
+  height: 40px;
+  padding: 10px;
   border-radius: 5px;
   background-color: var(--color-base-dias);
-  overflow: hidden;
+  font-size: 1.2rem;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-.ejercicios{
+.card:hover {
+  background-color: var(--color-secundario);
+  transform: scale(1.05);
+}
+
+/* ---------------------- Ejercicios ---------------------- */
+.ejercicios {
+  display: none;
   list-style: none;
   width: 100%;
-  margin-top: 0;
-  padding-left: 0;
-
+  padding: 0;
+  margin: 0;
+  gap: 5px;
 }
 
-.ejercicios li{
+.ejercicios.visible {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.ejercicios li {
   background-color: var(--color-claro-dias);
-  margin-top: 5px;
-  padding-left: 10px;
-  height: 40px;
-  line-height: 30px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #333;
 }
 
-.visible{
-  display: none;
+/* ---------------------- Barra de navegación ---------------------- */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
 }
 
+.navbar ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
 
-  /*barra de navegacion ----------------------------------------------------*/
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff; /* Cambia el color de fondo si lo deseas */
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar li {
-    margin: 0 25px;
-  }
-  
-  .navbar a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    text-decoration: none;
-    color: #000;
-    font-size: 1.1rem;
-  }
-  
-  .navbar i {
-    margin-right: 5px;
-  }
-  
-  /* Animations */
-  @keyframes fade-in {
-    from {
+.navbar a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: var(--color-secundario);
+}
+
+/* ---------------------- Animaciones ---------------------- */
+@keyframes fade-in {
+  from {
       opacity: 0;
       transform: scale(0.9);
-    }
-    to {
+  }
+  to {
       opacity: 1;
       transform: scale(1);
-    }
   }
-  
-  /* Media Queries */
-  @media (min-width: 768px) {
-    .logo {
-      width: 150px; /* Más grande en tablets */
-    }
-  
-    .login-container {
-      padding: 30px;
-    }
+}
+
+/* ---------------------- Media Queries ---------------------- */
+@media (min-width: 768px) {
+  .logo {
+      width: 150px;
   }
-  
+
+  .navbar {
+      justify-content: center;
+  }
+}
