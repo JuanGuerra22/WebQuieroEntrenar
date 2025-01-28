@@ -17,16 +17,16 @@
     <section class="navbar-container">
         <nav class="navbar">
             <ul>
-              <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
-              <li><a href="#"><i class="fas fa-user"></i> Perfil</a></li>
-              <li><a href="#"><i class="fas fa-file"></i> Informe</a></li>
+              <li><a href="home-principal.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+              <li><a href="informe.html"><i class="fas fa-file"></i> Informe</a></li>
             </ul>
         </nav>
     </section>
 
     <!-- Logo -->
     <div class="logo-izq">
-        <img src="img/logo01.png" alt="Gym App Logo" class="logo">
+        <img src="img/logo01.png" alt="Gym App Logo" class="logo top">
     </div>
 
     <!-- Listado de semanas -->
@@ -34,12 +34,24 @@
         <div class="titulo">
             <h1>Semanas de Entrenamiento</h1>
         </div>
-        <ul class="semana-card"> 
+        <div class="semanas-card-container"><ul class="semana-card"> 
             <li><a href="#">Sem 01</a></li>
             <li><a href="#">Sem 02</a></li>
             <li><a href="#">Sem 03</a></li>
             <li><a href="#">Sem 04</a></li>
-        </ul>
+            <li><a href="#">Sem 05</a></li>
+            <li><a href="#">Sem 06</a></li>
+            <li><a href="#">Sem 07</a></li>
+            <li><a href="#">Sem 08</a></li>
+            <li><a href="#">Sem 09</a></li>
+            <li><a href="#">Sem 10</a></li>
+            <li><a href="#">Sem 11</a></li>
+            <li><a href="#">Sem 12</a></li>
+            <li><a href="#">Sem 13</a></li>
+            <li><a href="#">Sem 14</a></li>
+            <li><a href="#">Sem 15</a></li>
+            <li><a href="#">Sem 16</a></li>
+        </ul></div>
     </section>
 
     <!-- Listado de días -->
@@ -114,20 +126,136 @@
             </div>
 
             <button class="card" id="btn-martes" type="button">Martes</button>
-            <ul class="ejercicios" id="ejer-martes">
-                <li>Sentadillas barra libre</li>
-                <li>Leg press 45°</li>
-                <li>Extensiones de pierna</li>
-                <li>Abdominales crunch</li>
-            </ul>
+            <div class="ejercicios" id="ejer-martes">
+                <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Sentadillas barra libre  <span class="material-symbols-outlined">
+                            visibility </span> </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Leg press 45° <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Extensiones de pierna <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Abdominales crunch <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+            </div>
 
             <button class="card" id="btn-miercoles" type="button">Miércoles</button>
-            <ul class="ejercicios" id="ejer-miercoles">
-                <li>Deadlift</li>
-                <li>Press militar</li>
-                <li>Elevaciones laterales</li>
-                <li>Face pulls</li>
-            </ul>
+            <div class="ejercicios" id="ejer-miercoles">
+
+                <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Deadlift  <span class="material-symbols-outlined">
+                            visibility </span> </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Press militar <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Elevaciones laterales <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Face pulls <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+
+            </div>
 
             <button class="card" id="btn-jueves" type="button">Jueves</button>
             <ul class="ejercicios" id="ejer-jueves">
@@ -146,17 +274,73 @@
             </ul>
 
             <button class="card" id="btn-sabado" type="button">Sábado</button>
-            <ul class="ejercicios" id="ejer-sabado">
-                <li>Sprints</li>
-                <li>Circuito funcional</li>
-                <li>Plancha</li>
-                <li>Estiramientos</li>
-            </ul>
+            <div class="ejercicios" id="ejer-sabado">
+
+                <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Sprints <span class="material-symbols-outlined">
+                            visibility </span> </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Circuito funcional <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Plancha <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Estiramientos <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+            </div>
         </div>
     </section>
-
     <br><br><br>
-
     <script src="script.js"></script>
 </body>
 </html>

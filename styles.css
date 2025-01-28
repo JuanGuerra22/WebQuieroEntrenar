@@ -38,9 +38,6 @@ body {
   width: 100%;
   height: 100vh;
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1000;
   opacity: 1;
   transition: opacity 1s ease-out;
 }
@@ -48,6 +45,11 @@ body {
 .logo {
   width: 200px;
   animation: fade-in 1.5s ease-out;
+}
+.logo.top{
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 /* ---------------------- Login Screen ---------------------- */
@@ -112,6 +114,7 @@ button:hover {
 .semana-card {
   display: flex;
   list-style: none;
+  flex-wrap: nowrap;
   padding: 0;
   gap: 10px;
 }
@@ -132,6 +135,11 @@ button:hover {
   color: white;
   text-decoration: none;
   white-space: wrap;
+}
+.semanas-card-container{
+  display: flex;
+  overflow-x: auto;
+  max-width: 350px;
 }
 
 /*------------------------tablas--------------------------------*/
@@ -176,7 +184,7 @@ tr:nth-child(even) {
   padding: 10px;
   border-radius: 5px;
   background-color: var(--color-base-dias);
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -212,6 +220,14 @@ tr:nth-child(even) {
 }
 
 /* ---------------------- Barra de navegación ---------------------- */
+
+.navbar-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* Incluye el padding en el ancho total */
+}
 .navbar {
   position: fixed;
   bottom: 0;
