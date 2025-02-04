@@ -63,3 +63,23 @@ buttons.forEach((button) => {
  //   alert('Por favor, completa todos los campos.');
  // }
 //});
+
+
+
+//---------------------- Popup ---------------------- 
+const icono = document.getElementById('miIcono');
+const popup = document.getElementById('miPopup');
+
+icono.onclick = function() {
+  popup.style.display = 'block';
+}
+
+function cerrarPopup() {
+  popup.style.display = 'none';
+}
+// Evento para cerrar el popup al hacer clic fuera de él
+window.onclick = function(event) {
+  if (event.target == popup) {
+    cerrarPopup();
+  }
+}
