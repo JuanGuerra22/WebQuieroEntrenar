@@ -63,15 +63,8 @@
                     <table>
                     <tr>
                         <th colspan="4" class="title-table">1. - Fly peck deck M  
-                            <span  id="miIcono" class="material-symbols-outlined">
-                            visibility </span> </th>
-
-                            <div class="popup" id="miPopup">
-                                <div class="popup-contenido">
-                                    <span class="cerrar-popup" onclick="cerrarPopup()">&times;</span>
-                                    <img src="img/fly-peck.gif" alt="GIF">
-                                </div>
-                            </div>
+                            <span class="material-symbols-outlined" data-popup="popup-flypeck">visibility</span>
+                        </th>
                     </tr>
                     <tr>
                         <th>Sets</th>
@@ -85,8 +78,9 @@
                     </tr>
 
                     <tr>
-                        <th colspan="4" class="title-table">2. - Press en banco plano B <span class="material-symbols-outlined">
-                            visibility </span></th>
+                        <th colspan="4" class="title-table">2. - Press en banco plano B 
+                            <span class="material-symbols-outlined" data-popup="popup-pressbanca">visibility</span>
+                        </th>
                     </tr>
                     <tr>
                         <th>Sets</th>
@@ -100,8 +94,9 @@
                     </tr>
 
                     <tr>
-                        <th colspan="4" class="title-table">3. - Pull up bodyweight <span class="material-symbols-outlined">
-                            visibility </span></th>
+                        <th colspan="4" class="title-table">3. - Pull up bodyweight 
+                            <span class="material-symbols-outlined" data-popup="popup-pullbody">visibility</span>
+                        </th>
                     </tr>
                     <tr>
                         <th>Sets</th>
@@ -115,8 +110,9 @@
                     </tr>
 
                     <tr>
-                        <th colspan="4" class="title-table">4. - Row seated B C <span class="material-symbols-outlined">
-                            visibility </span></th>
+                        <th colspan="4" class="title-table">4. - Row seated B C 
+                            <span class="material-symbols-outlined" data-popup="popup-rowseated">visibility</span>
+                        </th>
                     </tr>
                     <tr>
                         <th>Sets</th>
@@ -130,7 +126,36 @@
                     </tr>
                 </table> 
 
-              
+               <!-- Popups (fuera de la tabla) -->
+               <div class="popup" id="popup-flypeck">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-flypeck')">&times;</span>
+                    <img src="img/fly-peck.gif" alt="Fly Peck Deck">
+                </div>
+            </div>
+            
+            <div class="popup" id="popup-pressbanca">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-pressbanca')">&times;</span>
+                    <img src="img/pressbanca.gif" alt="Press en Banco Plano">
+                </div>
+            </div>
+
+            <div class="popup" id="popup-pullbody">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-pullbody')">&times;</span>
+                    <img src="img/pullupbody.gif" alt="Press en Banco Plano">
+                </div>
+            </div>
+
+            <div class="popup" id="popup-rowseated">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-rowseated')">&times;</span>
+                    <img src="img/rowseated.gif" alt="Press en Banco Plano">
+                </div>
+            </div>
+
+
             </div>
 
             <button class="card" id="btn-martes" type="button">Martes</button>
@@ -196,6 +221,8 @@
                         <td>1'</td>
                     </tr>
                 </table> 
+
+               
             </div>
 
             <button class="card" id="btn-miercoles" type="button">Miércoles</button>

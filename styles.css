@@ -278,11 +278,12 @@ tr:nth-child(even) {
 
 .popup-contenido {
   background-color: #fff;
-  margin: 15% auto; /* Centrar verticalmente */
+  margin: 50% auto; /* Centrar verticalmente */
   padding: 20px;
   border: 1px solid #888;
-  width: 80%; /* Ajusta el ancho según tus necesidades */
+  max-width: 80%; /* Ajusta el ancho según tus necesidades */
   position: relative; /* Para posicionar el botón de cerrar */
+  overflow: auto;
 }
 
 .cerrar-popup {
@@ -295,9 +296,6 @@ tr:nth-child(even) {
   cursor: pointer;
 }
 
-#miIcono {
-  cursor: pointer;
-}
 /* ---------------------- Animaciones ---------------------- */
 @keyframes fade-in {
   from {

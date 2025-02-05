@@ -67,19 +67,24 @@ buttons.forEach((button) => {
 
 
 //---------------------- Popup ---------------------- 
-const icono = document.getElementById('miIcono');
-const popup = document.getElementById('miPopup');
 
-icono.onclick = function() {
-  popup.style.display = 'block';
+document.querySelectorAll(".material-symbols-outlined").forEach(icon => {
+  icon.addEventListener("click", function() {
+      let popupId = this.getAttribute("data-popup");
+      document.getElementById(popupId).style.display = "block";
+  });
+});
+
+function cerrarPopup(id) {
+  document.getElementById(id).style.display = "none";
 }
 
-function cerrarPopup() {
-  popup.style.display = 'none';
-}
-// Evento para cerrar el popup al hacer clic fuera de él
 window.onclick = function(event) {
-  if (event.target == popup) {
-    cerrarPopup();
-  }
-}
+  document.querySelectorAll(".popup").forEach(popup => {
+      if (event.target === popup) {
+          popup.style.display = "none";
+      }
+  });
+};
+
+
