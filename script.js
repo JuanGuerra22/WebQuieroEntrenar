@@ -3,6 +3,10 @@
 function irHomePrincipal() {
   window.location.href = "home-principal.html";
 }
+// Redirigir a la página de registro
+function irRegistro() {
+  window.location.href = "registro.html";
+}
 
 // Añadir funcionalidad de expansión a las tarjetas
 const cards = document.querySelectorAll('.card');
