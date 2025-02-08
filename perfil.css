@@ -22,10 +22,10 @@
   .material-symbols-outlined {
     padding-left: 10px;
     font-variation-settings:
-    'FILL' 1,
-    'wght' 700,
+    'FILL' 0,
+    'wght' 400,
     'GRAD' 0,
-    'opsz' 24
+    'opsz' 25
   }
 
 /*------------------------LOGO-------------------------------*/
@@ -105,7 +105,8 @@
     background-color: var(--color-claro-dias);
 }
 .foto-perfil img{
-    max-width: 150px;
+    width: 150px;
+    height: 150px;
 }
 
 .perfil-info{
@@ -122,4 +123,16 @@
 
 .cont-informacion h2{
     font-size: 30px;
+}
+
+.datos{
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px;
+    text-align: left;
+    gap: 10px;
+}
+
+.datos p{
+    font-size: 20px;
 }
