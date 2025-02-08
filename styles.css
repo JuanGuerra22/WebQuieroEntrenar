@@ -286,6 +286,10 @@ tr:nth-child(even) {
   overflow: auto;
 }
 
+.popup-contenido img{
+  max-width: 100%;
+}
+
 .cerrar-popup {
   position: absolute;
   top: 10px;
@@ -295,6 +299,11 @@ tr:nth-child(even) {
   color: #000;
   cursor: pointer;
 }
+
+
+
+
+
 
 /* ---------------------- Animaciones ---------------------- */
 @keyframes fade-in {
