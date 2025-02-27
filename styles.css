@@ -6,6 +6,11 @@
   box-sizing: border-box;
 }
 
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 :root {
   --color-primario: #00D5E5;

@@ -1,7 +1,9 @@
+  
+
 
 // Redirigir a la página principal del home
 function irHomePrincipal() {
-  window.location.href = "home-principal.html";
+  window.location.href = "home-principal.html"; 
 }
 // Redirigir a la página de registro
 function irRegistro() {
