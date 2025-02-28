@@ -1,4 +1,5 @@
-  
+
+import {  } from "./registro-form.js";
 
 
 // Redirigir a la página principal del home
@@ -7,7 +8,7 @@ function irHomePrincipal() {
 }
 // Redirigir a la página de registro
 function irRegistro() {
-  window.location.href = "registro.html";
+  window.location.href = "registro-form.html";
 }
 
 // Añadir funcionalidad de expansión a las tarjetas
@@ -51,24 +52,6 @@ buttons.forEach((button) => {
 
 
 
-// Selección del formulario
-//const loginForm = document.getElementById('loginForm');
-
-// Manejar el evento de envío del formulario
-//loginForm.addEventListener('submit', (event) => {
- //event.preventDefault(); // Prevenir el envío del formulario por defecto
-
- // const email = document.getElementById('email').value;
- // const password = document.getElementById('password').value;
-
-  // Validación básica
- // if (email && password) {
-  //  console.log('Login exitoso'); // Puedes manejar la lógica de autenticación aquí
-   // irHomePrincipal(); // Redirigir al home principal
- // } else {
- //   alert('Por favor, completa todos los campos.');
- // }
-//});
 
 
 

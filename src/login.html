@@ -6,25 +6,27 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
   <title>Login - Quiero Entrenar</title>
-  <link rel="stylesheet" href="styles.css">
+  <!-- mi CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+
 
 </head>
 <body>
-  <div class="login-container">
+  <div class="registro-login-container">
     <img src="img/logo01.png" alt="Gym App Logo" class="logo">
     <h1>Iniciar sesión</h1>
     
-    <form class="login-form" id="loginForm">
-      <input type="email" id="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-      <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+    <form class="reg-log-form" id="login-form">
+      <input type="email" id="login-email" name="email" placeholder="Ingresa tu correo electrónico" required>
+      <input type="password" id="login-password" name="password" placeholder="Ingresa tu contraseña" required>
       <a href="#">Olvidé mi contraseña</a>
       
-      <button type="button" onclick="irHomePrincipal()">Entrar</button>
+      <button type="submit">Entrar</button>
       <button type="button" onclick="irRegistro()">Registarme</button>
     </form>
     
   </div>
 
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>

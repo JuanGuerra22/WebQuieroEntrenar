@@ -54,7 +54,7 @@ body{
 }
 
 /* ---------------------- Login Screen ---------------------- */
-.login-container {
+.registro-login-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -65,14 +65,14 @@ body{
   border-radius: 10px;
 }
 
-.login-form {
+.reg-log-form {
   display: flex;
   flex-direction: column;
   width: 100%;
   gap: 15px;
 }
 
-.login-form input {
+.reg-log-form input {
   padding: 12px;
   font-size: 16px;
   border: 1px solid var(--color-primario);
@@ -81,7 +81,7 @@ body{
   box-sizing: border-box;
 }
 
-.login-form select{
+.reg-log-form select{
   padding: 12px;
   font-size: 16px;
   border: 1px solid var(--color-primario);

@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <!-- Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <!-- mi CSS -->
+  <link rel="stylesheet" href="css/styles.css">
+ 
   <title>Login - Quiero Entrenar</title>
-  <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
-  <div class="login-container">
+  <div class="registro-login-container">
     <img src="img/logo01.png" alt="Gym App Logo" class="logo">
     <h1>Solicitar Registro</h1>
     
-    <form class="login-form" id="loginForm">
-        <input type="text" id="name" name="name" placeholder="Nombre Completo" required>
+    <form class="reg-log-form" id="registro-form">
+        <!-- <input type="text" id="name" name="name" placeholder="Nombre Completo" required>
         <input type="text" id="pais" name="pais" placeholder="Pais de nacimiento" required>
         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
         <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" min="1900-01-01" max="2007-12-31">
@@ -23,15 +28,16 @@
             <option value=""></option>
             <option value="masculino">Masculino</option>
             <option value="femenino">Femenino</option>
-        </select>
-        <input type="email" id="email" name="email" placeholder="Ingresa tu Email" required>
-        <input type="email" id="email-confirm" name="email" placeholder="Confirma tu Email" required>
-        <input type="password" id="password" name="password" placeholder="Ingresa tu contraseña" required>
+        </select> -->
+        <input type="email" id="registro-email" name="email" placeholder="Ingresa tu Email" required>
+        <!-- <input type="email" id="email-confirm" name="email" placeholder="Confirma tu Email" required> -->
+        <input type="password" id="registro-password" name="password" placeholder="Ingresa tu contraseña" required>
       
-      <button type="button" onclick="irHomePrincipal()">Solicitar Registro</button>
+        <button type="submit">Solicitar Registro</button>
     </form>
   </div>
-
-  <script src="script.js"> </script>
+  <!-- Toastify -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="js/script.js" type="module"> </script>
 </body>
 </html>
