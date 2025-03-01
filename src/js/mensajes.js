@@ -3,7 +3,7 @@ export function mensajes(mensaje, tipo = "success"){
     Toastify({
         text: mensaje,
         duration: 4000,
-        destination: "https://github.com/apvarun/toastify-js",
+        destination: "",
         newWindow: true,
         close: true,
         gravity: "top", // `top` or `bottom`

@@ -10,15 +10,15 @@
   <!-- mi CSS -->
   <link rel="stylesheet" href="css/styles.css">
  
-  <title>Login - Quiero Entrenar</title>
+  <title>registro - Quiero Entrenar</title>
   
 </head>
 <body>
   <div class="registro-login-container">
     <img src="img/logo01.png" alt="Gym App Logo" class="logo">
-    <h1>Solicitar Registro</h1>
+    <h1>Solicitar Registro</h1> <br>
     
-    <form class="reg-log-form" id="registro-form">
+    <form id="registroForm" class="reg-log-form" >
         <!-- <input type="text" id="name" name="name" placeholder="Nombre Completo" required>
         <input type="text" id="pais" name="pais" placeholder="Pais de nacimiento" required>
         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
@@ -31,13 +31,14 @@
         </select> -->
         <input type="email" id="registro-email" name="email" placeholder="Ingresa tu Email" required>
         <!-- <input type="email" id="email-confirm" name="email" placeholder="Confirma tu Email" required> -->
-        <input type="password" id="registro-password" name="password" placeholder="Ingresa tu contraseña" required>
+        <input type="password" id="registro-password" name="password" placeholder="Ingresa tu Contraseña" required>
       
         <button type="submit">Solicitar Registro</button>
     </form>
+    <br> <p>¿Ya estas registrado? <a href="login.html">Inicia Sesión</a></p>
   </div>
   <!-- Toastify -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-  <script src="js/script.js" type="module"> </script>
+  <script src="js/registro-form.js" type="module"> </script>
 </body>
 </html>

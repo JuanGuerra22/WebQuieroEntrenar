@@ -1,6 +1,4 @@
 
-import {  } from "./registro-form.js";
-
 
 // Redirigir a la página principal del home
 function irHomePrincipal() {

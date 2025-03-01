@@ -5,28 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
   <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-  <title>Login - Quiero Entrenar</title>
   <!-- mi CSS -->
-  <link rel="stylesheet" href="css/styles.css">
-
-
+   <link rel="stylesheet" href="css/styles.css">
+  <title>Login - Quiero Entrenar</title>
 </head>
 <body>
-  <div class="registro-login-container">
-    <img src="img/logo01.png" alt="Gym App Logo" class="logo">
-    <h1>Iniciar sesión</h1>
-    
-    <form class="reg-log-form" id="login-form">
-      <input type="email" id="login-email" name="email" placeholder="Ingresa tu correo electrónico" required>
-      <input type="password" id="login-password" name="password" placeholder="Ingresa tu contraseña" required>
-      <a href="#">Olvidé mi contraseña</a>
-      
-      <button type="submit">Entrar</button>
-      <button type="button" onclick="irRegistro()">Registarme</button>
-    </form>
-    
-  </div>
+    <div class="registro-login-container">
+      <img src="img/logo01.png" alt="Gym app Logo" class="logo">
+      <h1>Iniciar Sesión</h1> <br>
+      <form id="loginForm" class="reg-log-form">
+        <input type="email" id="login-email" placeholder="Ingresa tu Email" name="email" required>
+        <input type="password" id="login-password" placeholder="Ingresa tu Contraseña" name="password" required>
+        <button type="submit">Iniciar Sesión</button>
+      </form>
+      <br><p>¿No estas registrado? <a href="registro.html"> Solicita tu registro</a></p>
+    </div>
 
-  <script src="js/script.js"></script>
+    
+    <!-- Toastify -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="js/login-form.js" type="module"></script>
 </body>
 </html>

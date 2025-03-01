@@ -3,11 +3,14 @@ import { auth } from './firebase.js';
 import {mensajes} from './mensajes.js';
 
 
-// Selección del formulario
-const registroForm = document.querySelector('#registro-form');
+
+    // Selección del formulario
+ const registroForm = document.getElementById('registroForm');
+
+
 
 // Manejar el evento de envío del formulario
-registroForm.addEventListener('submit', async (e) => {
+registroForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // Prevenir el envío del formulario por defecto
     //captura el email y el password del formulario 
     const email = document.getElementById('registro-email').value;
@@ -16,11 +19,11 @@ registroForm.addEventListener('submit', async (e) => {
     console.log(email, password)
 
     try {
-        const user = await createUserWithEmailAndPassword(auth, email, password);
-        console.log(user);
+        const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
+        console.log(userCredentials);
         registroForm.reset(); //para limpiar los campos del formulario 
-        mensajes("Hola " + user.user.email + " tu solicitud fue enviada")
-
+        mensajes("Hola " + userCredentials.user.email + " tu solicitud fue enviada Satisfactoriamente");
+        //que me lleve a la pagina de inicio de sesion despues de un tiempo 
     } catch (error) {
         console.log(error.code)
         if(error.code === 'auth/email-already-in-use'){
@@ -37,8 +40,6 @@ registroForm.addEventListener('submit', async (e) => {
 });
 
 
-
-
   // Validación básica
  // if (email && password) {
   //  console.log('Login exitoso'); // Puedes manejar la lógica de autenticación aquí
@@ -47,3 +48,5 @@ registroForm.addEventListener('submit', async (e) => {
  //   alert('Por favor, completa todos los campos.');
  // }
 //});
+
+
