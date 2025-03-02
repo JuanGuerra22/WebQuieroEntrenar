@@ -1,13 +1,14 @@
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { auth } from "./firebase.js";
+import './cerrar-sesion.js';
 
 
-// Redirigir a la página principal del home
-function irHomePrincipal() {
-  window.location.href = "home-principal.html"; 
-}
-// Redirigir a la página de registro
-function irRegistro() {
-  window.location.href = "registro-form.html";
-}
+// Verificar el estado de autenticación
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+      window.location.href = "login.html"; // Redirigir al login si no está autenticado
+  }
+});
 
 // Añadir funcionalidad de expansión a las tarjetas
 const cards = document.querySelectorAll('.card');
@@ -54,17 +55,20 @@ buttons.forEach((button) => {
 
 
 //---------------------- Popup ---------------------- 
+function cerrarPopup(id) {
+  document.getElementById(id).style.display = "none";
+} 
+window.cerrarPopup = cerrarPopup; // Hacerla accesible globalmente
 
-document.querySelectorAll(".material-symbols-outlined").forEach(icon => {
+
+document.querySelectorAll(".gift").forEach(icon => {
   icon.addEventListener("click", function() {
       let popupId = this.getAttribute("data-popup");
       document.getElementById(popupId).style.display = "block";
   });
 });
 
-function cerrarPopup(id) {
-  document.getElementById(id).style.display = "none";
-}
+
 
 window.onclick = function(event) {
   document.querySelectorAll(".popup").forEach(popup => {

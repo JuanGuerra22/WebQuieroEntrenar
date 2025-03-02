@@ -19,16 +19,29 @@ body{
   --color-claro-dias: #F5F5F5;
 }
 
+@font-face {
+  font-family: 'Dosis';
+  src: url('https://fonts.gstatic.com/s/dosis/v32/HhyJU5sn9vOmLxNkIwRSjTVNWLEJN7Ml2xMEbK0UPg.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.toastify {
+  position: fixed !important;
+  z-index: 9999 !important;
+}
+
 /*------------------------iconos-------------------------------*/
 
 .material-symbols-outlined {
-  padding-left: 10px;
   font-variation-settings:
-  'FILL' 1,
-  'wght' 700,
+  'FILL' 0,
+  'wght' 400,
   'GRAD' 0,
   'opsz' 24
 }
+
 
 /* ---------------------- Splash Screen ---------------------- */
 .splash-screen {

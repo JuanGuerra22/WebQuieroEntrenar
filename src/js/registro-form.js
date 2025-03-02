@@ -1,20 +1,34 @@
 import { createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js"
+// import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+// import { db } from "./firebase.js"; // Importa la instancia de Firestore
 import { auth } from './firebase.js';
 import {mensajes} from './mensajes.js';
 
 
 
     // Selección del formulario
- const registroForm = document.getElementById('registroForm');
+const registroForm = document.getElementById('registroForm');
 
-
-
-// Manejar el evento de envío del formulario
+//El if valida si se encuentra el formulario 
+if(registroForm){ 
+    // Manejar el evento de envío del formulario
 registroForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // Prevenir el envío del formulario por defecto
     //captura el email y el password del formulario 
     const email = document.getElementById('registro-email').value;
     const password = document.getElementById('registro-password').value;
+
+    // Validación antes de enviar los datos a Firebase
+    if (!email || !password) {
+        mensajes("Por favor, complete todos los campos", "fail");
+        return;
+      }
+  
+      // Validar que la contraseña tenga al menos 6 caracteres
+      if (password.length < 6) {
+        mensajes("La contraseña debe tener al menos 6 caracteres", "fail");
+        return;
+      }
 
     console.log(email, password)
 
@@ -23,7 +37,12 @@ registroForm.addEventListener("submit", async (e) => {
         console.log(userCredentials);
         registroForm.reset(); //para limpiar los campos del formulario 
         mensajes("Hola " + userCredentials.user.email + " tu solicitud fue enviada Satisfactoriamente");
-        //que me lleve a la pagina de inicio de sesion despues de un tiempo 
+
+        // Redirigir a la página de login después de 2 segundos
+      setTimeout(() => {
+        window.location.href = "login.html";
+      }, 2000);
+
     } catch (error) {
         console.log(error.code)
         if(error.code === 'auth/email-already-in-use'){
@@ -38,6 +57,23 @@ registroForm.addEventListener("submit", async (e) => {
         }
     }
 });
+} else{
+    console.error('No se encontró el formulario de registro')
+}
+
+// Llamar esta función después de registrar un usuario
+async function guardarDatosUsuario(user) {
+    const userRef = doc(db, "usuarios", user.uid);
+    await setDoc(userRef, {
+        email: user.email,
+        nombre: "", // Se podrá actualizar después en perfil.html
+        peso: "",
+        altura: "",
+        fechaRegistro: new Date()
+    });
+}
+
+
 
 
   // Validación básica
