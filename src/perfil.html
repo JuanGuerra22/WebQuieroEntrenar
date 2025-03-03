@@ -13,51 +13,48 @@
 </head>
 <body>
       <!-- Barra de navegación -->
-      <section class="navbar-container">
-        <nav class="navbar">
-            <ul>
-              <li><a href="home-principal.html"><i class="fas fa-home"></i> Home</a></li>
-              <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
-              <li><a href="informe.html"><i class="fas fa-file"></i> Informe</a></li>
-            </ul>
-        </nav>
+    <section class="navbar-container">
+      <nav class="navbar">
+          <ul>
+            <li><a href="home-principal.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+            <li><a href="informe.html"><i class="fas fa-file"></i> Informe</a></li>
+          </ul>
+      </nav>
     </section>
 
    
     <section class="cont-superior">
      
-        <div class="logo-izq">
-          <img src="img/logo01.png" alt="Gym App Logo" class="logo top">
+      <div class="logo-izq">
+        <img src="img/logo01.png" alt="Gym App Logo" class="logo top">
+      </div>
+
+      <div class="perfil">
+        <div class="foto-perfil">
+          <img src="img/perfil.jpg" alt="Foto de perfil">
         </div>
 
-        <div class="perfil">
-          <div class="foto-perfil">
-            <img src="img/perfil.jpg" alt="Foto de perfil">
-          </div>
-
-          <div class="perfil-info">
-            <h2>Juan Luis Guerra Rodríguez</h2>
-            <br>
-            <h3>Objetivo</h3>
-            <p>Aumento de masa muscular con énfasis en 
-            Miembros Superiores - Hombres</p>
-          </div>
-          
-        </div>
+        <div class="perfil-info">
+          <h2 id="nombre">Cargando...</h2>  <!-- Nombre del usuario -->
+          <span id="email">Cargando...</span>
+        </div> 
+      </div>
 
     </section>
 
     <section class="cont-informacion">
-      <h2>Tu información</h2>
+      <h2>Tu información</h2> 
 
       <div class="datos">
         
-        <h2>Datos personales</h2>
-        <p>Email: juan.l.guerrar@gmail.com</p>
-        <p>Edad: 25 años</p>
-        <p>Peso: 70 kg <span class="material-symbols-outlined">edit</span> </p>
-        
-        <p>Altura: 1.75 m <span class="material-symbols-outlined">edit</span> </p>
+        <h2>Datos personales <span class="material-symbols-outlined">edit</span> </h2> 
+
+        <p>Nombre: <span id="nombre">Cargando...</span></p>
+        <p>Email: <span id="peso">Cargando...</span></p>
+        <p>Edad: <span id="edad">Cargando...</span></p>
+        <p>Peso: <span id="peso">Cargando...</span></p>
+        <p>Altura: <span id="altura">Cargando...</span></p>
       
         <h2>Información de entrenamiento</h2>
         <p>Nivel: Avanzado</p>
@@ -68,6 +65,6 @@
 
 
 
-    <script src="js/script.js" type="module"> </script>
+    <script src="js/perfil.js" type="module"> </script>
 </body>
 </html>

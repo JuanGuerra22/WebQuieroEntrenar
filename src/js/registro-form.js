@@ -1,17 +1,18 @@
 import { createUserWithEmailAndPassword  } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js"
-// import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
-// import { db } from "./firebase.js"; // Importa la instancia de Firestore
-import { auth } from './firebase.js';
+import { doc, setDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+import { auth, db } from './firebase.js';
 import {mensajes} from './mensajes.js';
 
 
 
     // Selección del formulario
 const registroForm = document.getElementById('registroForm');
+const spinner = document.getElementById("spinner-container");
 
 //El if valida si se encuentra el formulario 
 if(registroForm){ 
     // Manejar el evento de envío del formulario
+
 registroForm.addEventListener("submit", async (e) => {
     e.preventDefault(); // Prevenir el envío del formulario por defecto
     //captura el email y el password del formulario 
@@ -23,6 +24,9 @@ registroForm.addEventListener("submit", async (e) => {
         mensajes("Por favor, complete todos los campos", "fail");
         return;
       }
+
+       // Mostrar el spinner y deshabilitar el botón mientras se procesa la solicitud
+        spinner.classList.remove("hidden");
   
       // Validar que la contraseña tenga al menos 6 caracteres
       if (password.length < 6) {
@@ -35,13 +39,24 @@ registroForm.addEventListener("submit", async (e) => {
     try {
         const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
         console.log(userCredentials);
-        registroForm.reset(); //para limpiar los campos del formulario 
+        // Guardar información adicional en Firestore
+        await setDoc(doc(db, "usuarios", userCredentials.user.uid), {
+            email: email,
+            nombre: "",      // Se puede actualizar más tarde
+            peso: "",        // Se puede actualizar más tarde
+            altura: "",      // Se puede actualizar más tarde
+            fechaRegistro: new Date()
+        });
+
         mensajes("Hola " + userCredentials.user.email + " tu solicitud fue enviada Satisfactoriamente");
+        registroForm.reset(); //para limpiar los campos del formulario 
+
+
 
         // Redirigir a la página de login después de 2 segundos
       setTimeout(() => {
         window.location.href = "login.html";
-      }, 2000);
+      }, 1500);
 
     } catch (error) {
         console.log(error.code)
@@ -55,23 +70,15 @@ registroForm.addEventListener("submit", async (e) => {
         } else{
             mensajes("Algo salió mal, Intenta nuevamente", 'fail');
         }
+    }finally {
+        // Ocultar el spinner después de la autenticación (sea éxito o error)
+        spinner.classList.add("hidden");
     }
 });
 } else{
     console.error('No se encontró el formulario de registro')
 }
 
-// Llamar esta función después de registrar un usuario
-async function guardarDatosUsuario(user) {
-    const userRef = doc(db, "usuarios", user.uid);
-    await setDoc(userRef, {
-        email: user.email,
-        nombre: "", // Se podrá actualizar después en perfil.html
-        peso: "",
-        altura: "",
-        fechaRegistro: new Date()
-    });
-}
 
 
 

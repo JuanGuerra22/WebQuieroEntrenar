@@ -1,5 +1,5 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
-import { auth } from "./firebase.js";
+import { auth, db} from "./firebase.js";
 import './cerrar-sesion.js';
 
 
@@ -7,7 +7,7 @@ import './cerrar-sesion.js';
 onAuthStateChanged(auth, (user) => {
   if (!user) {
       window.location.href = "login.html"; // Redirigir al login si no está autenticado
-  }
+  } 
 });
 
 // Añadir funcionalidad de expansión a las tarjetas
@@ -48,6 +48,16 @@ buttons.forEach((button) => {
     }
   });
 });
+
+//para mostrar el nombre del usuario en la pagina principal 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+      document.getElementById("user-name").textContent = `Bienvenido, ${user.email}`;
+  } else {
+      window.location.href = "login.html";
+  }
+});
+
 
 
 

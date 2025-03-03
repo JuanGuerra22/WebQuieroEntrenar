@@ -10,7 +10,6 @@ if(salirIcon){
         e.preventDefault();
         try {
             await signOut(auth);
-            mensajes("Has cerrado sesión correctamente", "success");
             // Redirigir al usuario a la página de inicio de sesión después de 1.5 segundos
             setTimeout(() => {
                 window.location.href = "login.html";
@@ -21,3 +20,4 @@ if(salirIcon){
         }
     });
 }
+
