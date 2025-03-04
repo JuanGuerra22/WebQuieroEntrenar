@@ -77,7 +77,10 @@
   .navbar a:hover {
     color: var(--color-secundario);
   }
-
+  /* editar perfil  */
+  .hidden {
+    display: none;
+  }
   /* ---------------------- Perfil ---------------------- */
 
 .cont-superior{
@@ -131,4 +134,27 @@
 
 .datos p{
     font-size: 20px;
+}
+
+/* Personalizacion de los input y botones para editar  */
+
+input{
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-primario);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button{
+  padding: 12px;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Dosis', serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }

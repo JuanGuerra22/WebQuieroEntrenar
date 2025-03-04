@@ -38,7 +38,7 @@ if (loginForm) {
                     email: user.email,
                     nombre: "",
                     peso: "",
-                    altura: "",
+                    fNacimiento: "",
                     fechaRegistro: new Date(),
                 });
                 console.log("Se creó el documento en Firestore para el usuario existente.");

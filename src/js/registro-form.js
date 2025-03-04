@@ -44,7 +44,7 @@ registroForm.addEventListener("submit", async (e) => {
             email: email,
             nombre: "",      // Se puede actualizar más tarde
             peso: "",        // Se puede actualizar más tarde
-            altura: "",      // Se puede actualizar más tarde
+            fNacimiento: "",    // Se puede actualizar más tarde
             fechaRegistro: new Date()
         });
 
@@ -78,18 +78,4 @@ registroForm.addEventListener("submit", async (e) => {
 } else{
     console.error('No se encontró el formulario de registro')
 }
-
-
-
-
-
-  // Validación básica
- // if (email && password) {
-  //  console.log('Login exitoso'); // Puedes manejar la lógica de autenticación aquí
-   // irHomePrincipal(); // Redirigir al home principal
- // } else {
- //   alert('Por favor, completa todos los campos.');
- // }
-//});
-
 
