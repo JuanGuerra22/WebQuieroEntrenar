@@ -1,14 +1,14 @@
-  
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { auth, db} from "./firebase.js";
+import './cerrar-sesion.js';
 
 
-// Redirigir a la página principal del home
-function irHomePrincipal() {
-  window.location.href = "home-principal.html"; 
-}
-// Redirigir a la página de registro
-function irRegistro() {
-  window.location.href = "registro.html";
-}
+// Verificar el estado de autenticación
+onAuthStateChanged(auth, (user) => {
+  if (!user) {
+      window.location.href = "login.html"; // Redirigir al login si no está autenticado
+  } 
+});
 
 // Añadir funcionalidad de expansión a las tarjetas
 const cards = document.querySelectorAll('.card');
@@ -49,41 +49,36 @@ buttons.forEach((button) => {
   });
 });
 
+//para mostrar el nombre del usuario en la pagina principal 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+      document.getElementById("user-name").textContent = `Bienvenido, ${user.email}`;
+  } else {
+      window.location.href = "login.html";
+  }
+});
 
 
-// Selección del formulario
-//const loginForm = document.getElementById('loginForm');
 
-// Manejar el evento de envío del formulario
-//loginForm.addEventListener('submit', (event) => {
- //event.preventDefault(); // Prevenir el envío del formulario por defecto
 
- // const email = document.getElementById('email').value;
- // const password = document.getElementById('password').value;
-
-  // Validación básica
- // if (email && password) {
-  //  console.log('Login exitoso'); // Puedes manejar la lógica de autenticación aquí
-   // irHomePrincipal(); // Redirigir al home principal
- // } else {
- //   alert('Por favor, completa todos los campos.');
- // }
-//});
 
 
 
 //---------------------- Popup ---------------------- 
+function cerrarPopup(id) {
+  document.getElementById(id).style.display = "none";
+} 
+window.cerrarPopup = cerrarPopup; // Hacerla accesible globalmente
 
-document.querySelectorAll(".material-symbols-outlined").forEach(icon => {
+
+document.querySelectorAll(".gift").forEach(icon => {
   icon.addEventListener("click", function() {
       let popupId = this.getAttribute("data-popup");
       document.getElementById(popupId).style.display = "block";
   });
 });
 
-function cerrarPopup(id) {
-  document.getElementById(id).style.display = "none";
-}
+
 
 window.onclick = function(event) {
   document.querySelectorAll(".popup").forEach(popup => {

@@ -77,49 +77,46 @@
   .navbar a:hover {
     color: var(--color-secundario);
   }
-
+  /* editar perfil  */
+  .hidden {
+    display: none;
+  }
   /* ---------------------- Perfil ---------------------- */
 
 .cont-superior{
     display: flex;
     background-color: var(--color-primario);
-    height: 280px;
+    height: 200px;
+  }
+  .perfil{
+    width: 100%;
   }
 
-.perfil{
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-  }
-
-.foto-perfil{
-    min-width: 130px;
-    height: 130px;
-    margin-top: 100px;
-    border-radius: 50%;
-    overflow: hidden;
-    background-color: var(--color-claro-dias);
-}
-.foto-perfil img{
-    width: 150px;
-    height: 150px;
-}
-
-.perfil-info{
+  .perfil-info{
     display: flex;
     flex-direction: column;
     margin-top: 100px; 
     text-align: center;
 }
 
+.perfil-info h2{
+  font-size: 2.1rem;
+}
+#email{
+  font-size: 1.5rem;
+}
+/* -------------------------------------------------- */
+
+
 .cont-informacion{
     padding-top: 20px;
     text-align: center;
 }
-
-.cont-informacion h2{
-    font-size: 30px;
+.tu-info{
+  font-size: 2.2rem;
+  padding-bottom: 25px;
 }
+
 
 .datos{
     display: flex;
@@ -131,4 +128,64 @@
 
 .datos p{
     font-size: 20px;
+}
+
+/* Personalizacion de los input y botones para editar  */
+
+input{
+  padding: 12px;
+  font-size: 14px;
+  border: 1px solid var(--color-primario);
+  border-radius: 5px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button{
+  padding: 12px;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: 'Dosis', serif;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+/* animacion de carga en inicio de sesion y registro */
+.spinner-container {
+  position: fixed;  /* Fija la posición en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.7); /* Fondo semitransparente */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegura que esté encima de todo */
+  transition: opacity 0.3s ease-in-out;
+  display: flex;
+}
+
+.spinner {
+  width: 30px;
+  height: 30px;
+  border: 4px solid rgba(0, 0, 0, 0.2);
+  border-top: 4px solid #00D5E5; /* Color del spinner */
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-top: 10px;
+  display: flex;
+
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
 }

@@ -4,70 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=edit" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <meta name="description" content="Aplicación para planificar semanas de entrenamiento en el gimnasio.">
-    <link rel="stylesheet" href="perfil.css">
+    <link rel="stylesheet" href="css/perfil.css">
     <title>Perfil</title>
 </head>
 <body>
       <!-- Barra de navegación -->
-      <section class="navbar-container">
-        <nav class="navbar">
-            <ul>
-              <li><a href="home-principal.html"><i class="fas fa-home"></i> Home</a></li>
-              <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
-              <li><a href="informe.html"><i class="fas fa-file"></i> Informe</a></li>
-            </ul>
-        </nav>
+    <section class="navbar-container">
+      <nav class="navbar">
+          <ul>
+            <li><a href="home-principal.html"><span class="material-symbols-outlined">home</span>Home</a></li>
+            <li><a href="perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a></li>
+            <li><a href="informe.html"><span class="material-symbols-outlined">docs</span>Informe</a></li>
+            <li><a href="#" id="salir-icon" ><span class="material-symbols-outlined">output_circle</span>Salir</a></li>
+          </ul>
+      </nav>
     </section>
-
+      <!-- --------------------------------------- -->
    
     <section class="cont-superior">
-     
-        <div class="logo-izq">
-          <img src="img/logo01.png" alt="Gym App Logo" class="logo top">
-        </div>
+      <div class="logo-izq">
+        <img src="img/logo01.png" alt="Gym App Logo" class="logo top">
+      </div>
 
-        <div class="perfil">
-          <div class="foto-perfil">
-            <img src="img/perfil.jpg" alt="Foto de perfil">
-          </div>
-
-          <div class="perfil-info">
-            <h2>Juan Luis Guerra Rodríguez</h2>
-            <br>
-            <h3>Objetivo</h3>
-            <p>Aumento de masa muscular con énfasis en 
-            Miembros Superiores - Hombres</p>
-          </div>
-          
-        </div>
-
+      <div class="perfil">
+        <div class="perfil-info">
+          <h2 class="nombre-usuario"> No has definido tu nombre</h2>  <!-- Nombre del usuario -->
+          <span id="email">Cargando...</span>
+        </div> 
+      </div>
     </section>
 
     <section class="cont-informacion">
-      <h2>Tu información</h2>
+      <h2 class="tu-info">Tu información </h2> 
 
       <div class="datos">
         
-        <h2>Datos personales</h2>
-        <p>Email: juan.l.guerrar@gmail.com</p>
-        <p>Edad: 25 años</p>
-        <p>Peso: 70 kg <span class="material-symbols-outlined">edit</span> </p>
-        
-        <p>Altura: 1.75 m <span class="material-symbols-outlined">edit</span> </p>
+        <h2>Datos personales <span id="editar-perfil" class="material-symbols-outlined">edit</span> </h2> 
+
+        <p>Nombre: <span class="nombre-usuario">Cargando...</span>
+          <input type="text" id="nombre-input" class="hidden" required>
+        </p>
+        <p>Fecha de nacimiento: <span id="fecha-nacimiento"> Fecha sin registrar </span>
+          <input type="date" id="fecha-nacimiento-input" class="hidden" required>
+        </p>
+        <p>Edad: <span id="edad">Cargando...</span></p>
+        <p>Peso: <span id="peso">Cargando...</span>
+          <input type="number" id="peso-input" class="hidden" required> 
+        </p>
+        <button id="guardar-btn" class="hidden">Guardar Información</button>
       
         <h2>Información de entrenamiento</h2>
-        <p>Nivel: Avanzado</p>
-        <p>Frecuencia: 6 veces por semana</p>
+        <p>Nivel: <span id="nivel">Cargando...</span></p> 
+        <p>Frecuencia: <span id="frecuencia">Cargando...</span></p>
       </div>
       
+      <div id="spinner-container" class="spinner-container hidden">
+        <div class="spinner"></div>
+      </div>
     </section>
 
 
 
-    <script src="script.js"></script>
+    <script src="js/perfil.js" type="module"> </script>
 </body>
 </html>
