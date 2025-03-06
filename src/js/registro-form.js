@@ -25,8 +25,7 @@ registroForm.addEventListener("submit", async (e) => {
         return;
       }
 
-       // Mostrar el spinner y deshabilitar el botón mientras se procesa la solicitud
-        spinner.classList.remove("hidden");
+       
   
       // Validar que la contraseña tenga al menos 6 caracteres
       if (password.length < 6) {
@@ -39,6 +38,8 @@ registroForm.addEventListener("submit", async (e) => {
     try {
         const userCredentials = await createUserWithEmailAndPassword(auth, email, password);
         console.log(userCredentials);
+        // Mostrar el spinner y deshabilitar el botón mientras se procesa la solicitud
+        spinner.classList.remove("hidden");
         // Guardar información adicional en Firestore
         await setDoc(doc(db, "usuarios", userCredentials.user.uid), {
             email: email,

@@ -2,6 +2,9 @@ import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.3.
 import { auth, db } from "./firebase.js";
 import './cerrar-sesion.js';
 
+
+const spinner = document.getElementById("spinner-container");
+
 const editBtn = document.getElementById('editar-perfil');
 const guardarBtn = document.getElementById('guardar-btn');
 
@@ -32,6 +35,10 @@ auth.onAuthStateChanged(async (user) => {
         if (userSnap.exists()) {
             const data = userSnap.data();
 
+            if (data.fotoURL) {
+                imgFotoPerfil.src = data.fotoURL; // Mostrar la imagen de perfil guardada
+            }
+
             // Mostrar datos en la interfaz
             email.textContent = data.email || "No se encuentra tu Email";
 
@@ -54,6 +61,7 @@ auth.onAuthStateChanged(async (user) => {
         window.location.href = "login.html"; // Redirige si no está autenticado
     }
 });
+
 
 
 // Mostrar inputs para edición.
@@ -80,6 +88,9 @@ guardarBtn.addEventListener('click', async () =>{
     console.log("💾 Guardando cambios...");
     if (!userRef) return; 
 
+     // Mostrar el spinner y deshabilitar el botón mientras se procesa la solicitud
+     spinner.classList.remove("hidden");
+
     const nuevoNombre = nombreInput.value.trim();
     const nuevaFNacimiento = fNacimientoImput.value.trim();
     const nuevoPeso = pesoInput.value.trim();
@@ -94,8 +105,9 @@ guardarBtn.addEventListener('click', async () =>{
        if (nuevoPeso) updates.peso = nuevoPeso;
 
        if (Object.keys(updates).length > 0) {
-           await updateDoc(userRef, updates);
-           console.log(" Perfil actualizado correctamente.");
+            await updateDoc(userRef, updates);
+            console.log(" Perfil actualizado correctamente.");
+   
        } else {
            console.log("⚠ No hay cambios que guardar.");
        }
@@ -122,6 +134,9 @@ guardarBtn.addEventListener('click', async () =>{
 
     } catch (error) {
         console.error("Error al actualizar perfil:", error);
+    }finally {
+        // Ocultar el spinner siempre al final
+        spinner.classList.add("hidden");
     }
 });
 
