@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Dosis">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=visibility" />
+    <meta name="description" content="Aplicación para planificar semanas de entrenamiento en el gimnasio.">
+    <title>Home - Semanas de Entrenamiento</title>
+</head>
+<body>
+
+    <!-- Barra de navegación -->
+    <section class="navbar-container">
+        <nav class="navbar">
+            <ul>
+              <li><a href="home-principal.html"><i class="fas fa-home"></i> Home</a></li>
+              <li><a href="perfil.html"><i class="fas fa-user"></i> Perfil</a></li>
+              <li><a href="informe.html"><i class="fas fa-file"></i> Informe</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <!-- Logo -->
+    <div class="logo-izq">
+        <img src="img/logo01.png" alt="Gym App Logo" class="logo top">
+    </div>
+
+    <!-- Listado de semanas -->
+    <section class="semanas-container">
+        <div class="titulo">
+            <h1>Semanas de Entrenamiento</h1>
+        </div>
+        <div class="semanas-card-container">
+            <ul class="semana-card"> 
+            <li><a href="#">Sem 01</a></li>
+            <li><a href="#">Sem 02</a></li>
+            <li><a href="#">Sem 03</a></li>
+            <li><a href="#">Sem 04</a></li>
+            <li><a href="#">Sem 05</a></li>
+            <li><a href="#">Sem 06</a></li>
+            <li><a href="#">Sem 07</a></li>
+            <li><a href="#">Sem 08</a></li>
+            <li><a href="#">Sem 09</a></li>
+            <li><a href="#">Sem 10</a></li>
+            <li><a href="#">Sem 11</a></li>
+            <li><a href="#">Sem 12</a></li>
+            <li><a href="#">Sem 13</a></li>
+            <li><a href="#">Sem 14</a></li>
+            <li><a href="#">Sem 15</a></li>
+            <li><a href="#">Sem 16</a></li>
+        </ul></div>
+    </section>
+
+    <!-- Listado de días -->
+    <section class="dias-container">
+        <div class="cards">
+            <button class="card" id="btn-lunes" type="button">Lunes</button>
+            <div class="ejercicios" id="ejer-lunes">
+                
+                    <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Fly peck deck M  
+                            <span class="material-symbols-outlined" data-popup="popup-flypeck">visibility</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Press en banco plano B 
+                            <span class="material-symbols-outlined" data-popup="popup-pressbanca">visibility</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Pull up bodyweight 
+                            <span class="material-symbols-outlined" data-popup="popup-pullbody">visibility</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Row seated B C 
+                            <span class="material-symbols-outlined" data-popup="popup-rowseated">visibility</span>
+                        </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+
+               <!-- Popups (fuera de la tabla) -->
+               <div class="popup" id="popup-flypeck">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-flypeck')">&times;</span>
+                    <img src="img/fly-peck.gif" alt="Fly Peck Deck">
+                </div>
+            </div>
+            
+            <div class="popup" id="popup-pressbanca">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-pressbanca')">&times;</span>
+                    <img src="img/pressbanca.gif" alt="Press en Banco Plano">
+                </div>
+            </div>
+
+            <div class="popup" id="popup-pullbody">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-pullbody')">&times;</span>
+                    <img src="img/pullupbody.gif" alt="Press en Banco Plano">
+                </div>
+            </div>
+
+            <div class="popup" id="popup-rowseated">
+                <div class="popup-contenido">
+                    <span class="cerrar-popup" onclick="cerrarPopup('popup-rowseated')">&times;</span>
+                    <img src="img/rowseated.gif" alt="Press en Banco Plano">
+                </div>
+            </div>
+
+
+            </div>
+
+            <button class="card" id="btn-martes" type="button">Martes</button>
+            <div class="ejercicios" id="ejer-martes">
+                <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Sentadillas barra libre  <span class="material-symbols-outlined">
+                            visibility </span> </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Leg press 45° <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Extensiones de pierna <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Abdominales crunch <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+
+               
+            </div>
+
+            <button class="card" id="btn-miercoles" type="button">Miércoles</button>
+            <div class="ejercicios" id="ejer-miercoles">
+
+                <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Deadlift  <span class="material-symbols-outlined">
+                            visibility </span> </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Press militar <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Elevaciones laterales <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Face pulls <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+
+            </div>
+
+            <button class="card" id="btn-jueves" type="button">Jueves</button>
+            <ul class="ejercicios" id="ejer-jueves">
+                <li>Dominadas</li>
+                <li>Barbell rows</li>
+                <li>Remo con mancuernas</li>
+                <li>Curl bíceps</li>
+            </ul>
+
+            <button class="card" id="btn-viernes" type="button">Viernes</button>
+            <ul class="ejercicios" id="ejer-viernes">
+                <li>Press de banca inclinado</li>
+                <li>Press con mancuernas</li>
+                <li>Cruces en polea</li>
+                <li>Fondos</li>
+            </ul>
+
+            <button class="card" id="btn-sabado" type="button">Sábado</button>
+            <div class="ejercicios" id="ejer-sabado">
+
+                <table>
+                    <tr>
+                        <th colspan="4" class="title-table">1. - Sprints <span class="material-symbols-outlined">
+                            visibility </span> </th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>13</td>
+                        <td>2'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">2. - Circuito funcional <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">3. - Plancha <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>12</td>
+                        <td>1:30'</td>
+                    </tr>
+
+                    <tr>
+                        <th colspan="4" class="title-table">4. - Estiramientos <span class="material-symbols-outlined">
+                            visibility </span></th>
+                    </tr>
+                    <tr>
+                        <th>Sets</th>
+                        <th>Reps</th>
+                        <th>Rest Time</th>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>15</td>
+                        <td>1'</td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+    </section>
+    <br><br><br>
+    <script src="script.js"></script>
+</body>
+</html>
