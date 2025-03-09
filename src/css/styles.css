@@ -49,6 +49,29 @@ body{
   margin-top: 30px;
   margin-left:45%;
 }
+/* 
+------------------FORMULARIO DE ENTRENAMIENTOS----------------------------- */
+#admin-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7e7e7e;
+  margin-top: 50px;
+  min-width: 80%;
+}
+
+#entrenamient-form{
+ width: 90%;
+}
+
+#entrenamient-form select{
+  width: 100%;
+}
+#cont-ejercicios{
+  display: flex;
+  flex-direction: column;
+}
+
 
 /* animacion de carga en inicio de sesion y registro */
 .spinner-container {

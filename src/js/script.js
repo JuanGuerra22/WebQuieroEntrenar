@@ -1,6 +1,7 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import { auth, db} from "./firebase.js";
 import './cerrar-sesion.js';
+import './form-admin.js'
 
 
 // Verificar el estado de autenticación
