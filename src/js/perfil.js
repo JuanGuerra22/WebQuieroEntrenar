@@ -35,10 +35,6 @@ auth.onAuthStateChanged(async (user) => {
         if (userSnap.exists()) {
             const data = userSnap.data();
 
-            if (data.fotoURL) {
-                imgFotoPerfil.src = data.fotoURL; // Mostrar la imagen de perfil guardada
-            }
-
             // Mostrar datos en la interfaz
             email.textContent = data.email || "No se encuentra tu Email";
 

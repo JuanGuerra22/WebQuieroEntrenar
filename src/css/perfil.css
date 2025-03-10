@@ -13,90 +13,26 @@
     --color-claro-dias: #F5F5F5;
   }
   
-  /*------------------------iconos-------------------------------*/
   
-  .material-symbols-outlined {
-    padding-left: 10px;
-    font-variation-settings:
-    'FILL' 0,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 25
-  }
 
-/*------------------------LOGO-------------------------------*/
-  .logo {
-    width: 200px;
-  }
-  .logo.top{
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-  
-  /* ---------------------- Barra de navegación ---------------------- */
-
-.navbar-container {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    box-sizing: border-box; /* Incluye el padding en el ancho total */
-  }
-  .navbar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #fff;
-    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    padding: 10px;
-  }
-  
-  .navbar ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 25px;
-  }
-  
-  .navbar a {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-decoration: none;
-    color: #000;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .navbar a:hover {
-    color: var(--color-secundario);
-  }
-  /* editar perfil  */
-  .hidden {
-    display: none;
-  }
   /* ---------------------- Perfil ---------------------- */
 
 .cont-superior{
-    display: flex;
-    background-color: var(--color-primario);
-    height: 200px;
-  }
-  .perfil{
-    width: 100%;
-  }
+  display: flex;
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-primario);
+}
+  
+.perfil{
+  width: 100%;
+}
 
-  .perfil-info{
-    display: flex;
-    flex-direction: column;
-    margin-top: 100px; 
-    text-align: center;
+.perfil-info{
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px; 
+  text-align: center;
 }
 
 .perfil-info h2{
@@ -111,6 +47,7 @@
 .cont-informacion{
     padding-top: 20px;
     text-align: center;
+    width: 100%;
 }
 .tu-info{
   font-size: 2.2rem;
@@ -119,11 +56,11 @@
 
 
 .datos{
-    display: flex;
-    flex-direction: column;
-    padding-left: 20px;
-    text-align: left;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  text-align: left;
+  gap: 10px;
 }
 
 .datos p{

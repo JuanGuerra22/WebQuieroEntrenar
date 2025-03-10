@@ -5,14 +5,31 @@ import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/fi
 
 
 
+
+// Verificar el estado de autenticación
+onAuthStateChanged(auth, (user) => {
+    if (!user) {
+        window.location.href = "login.html"; // Redirigir al login si no está autenticado
+    } 
+  });
+  
+
+//verifico si el usuario es administrador 
 auth.onAuthStateChanged(async (user) =>{
     if(user){
         const userRef = doc(db, "usuarios", user.uid);
         const userSnap = await getDoc(userRef);
+        const nombreAdmin = document.getElementById('nombre-admin');
+        const emailAdmin = document.getElementById('email-admin');
+
+        
 
         if(userSnap.exists() && userSnap.data().rol === "admin"){
+            const data = userSnap.data() || 'Registra tu nombre';
+            nombreAdmin.textContent = data.nombre;
+            emailAdmin.textContent = data.rol;
             document.getElementById('admin-section').style.display = "flex";
-            console.log("Datos del usuario:", userSnap.data().rol);
+            console.log("Rol del usuario:", userSnap.data().rol);
         } else {
             console.log("El usuario no es administrador.");
         }
@@ -20,6 +37,8 @@ auth.onAuthStateChanged(async (user) =>{
         console.log("No hay usuario autenticado.");
     }
 });
+
+
 
 const enfoque = document.getElementById('enfoque');
 const textEjercicio = document.getElementById('text-ejercicio');

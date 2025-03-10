@@ -1,4 +1,5 @@
-/* General */
+/* Configuraciones generales */
+
 * {
   margin: 0;
   padding: 0;
@@ -35,45 +36,82 @@ body{
 /*------------------------iconos-------------------------------*/
 
 .material-symbols-outlined {
-  font-variation-settings:
-  'FILL' 0,
-  'wght' 400,
-  'GRAD' 0,
-  'opsz' 24
-}
-/* Nombre de usuario en pagina principal  */
-.cont-usuario{
-  display: flex;
-  text-align: center;
-  font-size: 1.1rem;
-  margin-top: 30px;
-  margin-left:45%;
-}
-/* 
-------------------FORMULARIO DE ENTRENAMIENTOS----------------------------- */
-#admin-section{
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #7e7e7e;
-  margin-top: 50px;
-  min-width: 80%;
-}
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+  }
 
-#entrenamient-form{
- width: 90%;
-}
+  /* ---------------------- Splash Screen INDEX---------------------- */
+.splash-screen {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+  }
+  
+  .logo {
+    width: 200px;
+    animation: fade-in 1.5s ease-out;
+  }
+  .logo.top{
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  
+  /* ---------------------- Barra de navegación ---------------------- */
 
-#entrenamient-form select{
-  width: 100%;
-}
-#cont-ejercicios{
-  display: flex;
-  flex-direction: column;
-}
+.navbar-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+  }
+  .navbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+  }
+  
+  .navbar a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+  }
+  
+  .navbar a:hover {
+    color: var(--color-secundario);
+  }
 
 
-/* animacion de carga en inicio de sesion y registro */
+  /* animacion de carga en inicio de sesion y registro */
 .spinner-container {
   position: fixed;  /* Fija la posición en la pantalla */
   top: 0;
@@ -111,313 +149,28 @@ body{
 }
 
 
-/* ---------------------- Splash Screen ---------------------- */
-.splash-screen {
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 100vh;
-  position: absolute;
-  opacity: 1;
-  transition: opacity 1s ease-out;
-}
-
-.logo {
-  width: 200px;
-  animation: fade-in 1.5s ease-out;
-}
-.logo.top{
-  position: absolute;
-  left: 0;
-  top: 0;
-}
-
-/* ---------------------- Login Screen ---------------------- */
-.registro-login-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  max-width: 400px;
-  width: 90%;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.reg-log-form {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  gap: 15px;
-}
-
-.reg-log-form input {
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid var(--color-primario);
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.reg-log-form select{
-  padding: 12px;
-  font-size: 16px;
-  border: 1px solid var(--color-primario);
-  border-radius: 5px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-button {
-  padding: 12px;
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: 'Dosis', serif;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-button:hover {
-  background-color: var(--color-secundario);
-  transform: scale(1.05);
-}
-
-/* ---------------------- Sección de semanas ---------------------- */
-.semanas-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 80px;
-}
-
-.titulo {
-  width: 100%;
-  text-align: center;
-  font-size: 1.3rem;
-  margin-bottom: 30px;
-}
-
-.semana-card {
-  display: flex;
-  list-style: none;
-  flex-wrap: nowrap;
-  padding: 0;
-  gap: 10px;
-}
-
-.semana-card li {
-  width: 80px;
-  height: 90px;
-  background-color: var(--color-primario);
-  border-radius: 10px;
-  text-align: center;
-  line-height: 90px;
-  white-space: wrap;
-}
-
-.semana-card a{
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: white;
-  text-decoration: none;
-  white-space: wrap;
-}
-.semanas-card-container{
-  display: flex;
-  overflow-x: auto;
-  align-items: center;
-  max-width: 350px;
-  height: 120px;
-  }
-
-/*------------------------tablas--------------------------------*/
-table {
-  border-collapse: collapse;
-  width: 100%;
-  background-color: lightblue;
-  font-size: 1.1rem;
-}
-.title-table{
-  font-size: 1.4rem; 
-  text-align: left;
-}
-
-th, td {
-  text-align: center;
-  padding: 8px;
-}
-
-tr:nth-child(even) {
-  background-color: #f2f2f2;
-}
 
 
-/* ---------------------- Cards de días ---------------------- */
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  margin-top: 30px;
-}
-
-.card {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  max-width: 400px;
-  height: 40px;
-  padding: 10px;
-  border-radius: 5px;
-  background-color: var(--color-base-dias);
-  font-size: 1.4rem;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.card:hover {
-  background-color: var(--color-secundario);
-  transform: scale(1.05);
-}
-
-/* ---------------------- Ejercicios ---------------------- */
-.ejercicios {
-  display: none;
-  list-style: none;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-  gap: 5px;
-}
-
-.ejercicios.visible {
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-}
-
-.ejercicios li {
-  background-color: var(--color-claro-dias);
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 1.2rem;
-  color: #333;
-}
-
-/* ---------------------- Barra de navegación ---------------------- */
-
-.navbar-container {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  box-sizing: border-box; /* Incluye el padding en el ancho total */
-}
-.navbar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background-color: #fff;
-  box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px;
-}
-
-.navbar ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 25px;
-}
-
-.navbar a {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-decoration: none;
-  color: #000;
-  font-size: 1rem;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: var(--color-secundario);
-}
-
-/* ---------------------- POPUP ---------------------- */
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
-  z-index: 1000; /* Asegura que el popup esté por encima de otros elementos */
-}
-
-.popup-contenido {
-  background-color: #fff;
-  margin: 50% auto; /* Centrar verticalmente */
-  padding: 20px;
-  border: 1px solid #888;
-  max-width: 80%; /* Ajusta el ancho según tus necesidades */
-  position: relative; /* Para posicionar el botón de cerrar */
-  overflow: auto;
-}
-
-.popup-contenido img{
-  max-width: 100%;
-}
-
-.cerrar-popup {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 20px;
-  font-weight: bold;
-  color: #000;
-  cursor: pointer;
-}
-
-
-
-
-
-
-/* ---------------------- Animaciones ---------------------- */
+  /* ---------------------- Animaciones ---------------------- */
 @keyframes fade-in {
-  from {
-      opacity: 0;
-      transform: scale(0.9);
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
   }
-  to {
-      opacity: 1;
-      transform: scale(1);
+  
+  /* ---------------------- Media Queries ---------------------- */
+  @media (min-width: 768px) {
+    .logo {
+        width: 150px;
+    }
+  
+    .navbar {
+        justify-content: center;
+    }
   }
-}
-
-/* ---------------------- Media Queries ---------------------- */
-@media (min-width: 768px) {
-  .logo {
-      width: 150px;
-  }
-
-  .navbar {
-      justify-content: center;
-  }
-}
+  

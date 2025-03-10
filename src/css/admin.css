@@ -1,0 +1,49 @@
+
+:root {
+    --color-primario: #00D5E5;
+    --color-secundario: #0071A6;
+    --color-base-dias: #515151;
+    --color-claro-dias: #F5F5F5;
+  }
+
+/* ------------------FORMULARIO DE ENTRENAMIENTOS-----------------------------  */
+#admin-section{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #7e7e7e;
+  margin-top: 50px;
+  min-width: 80%;
+}
+
+#entrenamient-form{
+ width: 90%;
+}
+
+#entrenamient-form select{
+  width: 100%;
+}
+#cont-ejercicios{
+  display: flex;
+  flex-direction: column;
+}
+
+/* banner azul - información   */
+.banner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 100px;
+    width: 100%;
+    height: 200px;
+    background-color: var(--color-primario);
+}
+.banner h2{
+    font-size: 2.1rem;
+}
+.banner p{
+    font-size: 1.5rem;
+}
+.banner span{
+    display: flex;
+}

@@ -1,0 +1,53 @@
+/* ---------------------- Login Screen ---------------------- */
+.registro-login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 400px;
+    width: 90%;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .reg-log-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+  }
+  
+  .reg-log-form input {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid var(--color-primario);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .reg-log-form select{
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid var(--color-primario);
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  button {
+    padding: 12px;
+    background-color: var(--color-primario);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: 'Dosis', serif;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  button:hover {
+    background-color: var(--color-secundario);
+    transform: scale(1.05);
+  }
