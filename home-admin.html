@@ -32,6 +32,9 @@
         <img src="src/img/logo01.png" alt="Gym App Logo" class="logo top">
     </div>
 
+
+
+<!-- --------------Banner----------- -->
     <div class="banner">
         <h2 id="nombre-admin">--------Nombre-------</h2>
         <span class="material-symbols-outlined">shield_person 
@@ -44,37 +47,46 @@
         </div>
         </div>
     </div>
+<!-- -----------------------Botones Admin---------------- -->
+    <div class="cont-botones">
+        <a href="#" id="add-exercise"><span class="material-symbols-outlined icon-circle">add_circle</span>Agregar Nuevos Ejercicios</a>
 
+        <!-- AGREGAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
 
-
-
-
-   
-    <!-- AGREGAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
-
-   <section id="admin-section" style="display: none;">
-    <h2>Agregar Nuevos Ejercicios</h2>
+   <section id="admin-section" class="hidden">
     <form id="entrenamient-form">
         <label for="enfoque">Escoge un enfoque</label>
         <select name="enfoque" id="enfoque">
             <option></option>
-            <option value="Agregar ejercicios - Tren Superior">Tren Superior</option>
-            <option value="Agregar ejercicios - Tren Inferior">Tren Inferior</option>
+            <option value="tren-superior">Tren Superior</option>
+            <option value="tren-inferior">Tren Inferior</option>
         </select>
+        
         <div id="cont-ejercicios" style="display: none;">
-            <h2 id="text-ejercicio"></h2>
-            <p>Add Exercise  </p> 
-            <div id="cont-input">
+            <div id="cont-inputs-icons">
                 <!-- Aqui se insertan los inputs -->
             </div>
-            <span id="add-exercise" class="material-symbols-outlined" style="color:#00D5E5;">add_circle</span>
+            <div id="cont-addBtn" class="hidden">
+                <span id="addBtn" class="material-symbols-outlined"> <p>Add Exercise</p> add_circle</span>
+            </div>
         </div>
-            
-
-
+        <div id="cont-trenSuperior">
+            <h2>Tren Superior</h2>
+        </div>
+        <div id="cont-trenInferior">
+            <h2>Tren Superior</h2>
+        </div>
+        
     </form>
    </section>
+
+        <a href="#"><span class="material-symbols-outlined">construction</span>Armar Entrenamientos</a>
+    </div>
+
     
+    
+
+
 
    <script src="src/js/admin.js" type="module"></script>
 </body>

@@ -6,14 +6,59 @@
     --color-claro-dias: #F5F5F5;
   }
 
-/* ------------------FORMULARIO DE ENTRENAMIENTOS-----------------------------  */
-#admin-section{
+  /*-------------------------Botones Admin -----------------------*/
+.cont-botones{
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #7e7e7e;
-  margin-top: 50px;
-  min-width: 80%;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.cont-botones a{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: #000000;
+  font-size: 1.3rem;
+  width: 80%;
+  height: 50px;
+  margin-top: 10px;
+  padding-right: 80px;
+  border-radius: 25px;
+  background-color: var(--color-primario);
+ 
+}
+.cont-botones a span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #F5F5F5;
+  font-size: 1.8rem;
+  width: 55px;
+  height: 55px;
+  border-radius: 100%;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 10px rgba(255, 255, 255, 0.5);
+}
+
+
+/* ------------------FORMULARIO DE ENTRENAMIENTOS-----------------------------  */
+.hidden{
+  display: none;
+ 
+}
+.visible{
+  display: flex;
+  flex-direction: column;
+}
+
+#admin-section{
+  align-items: center;
+  background-color: #f1f1f1d0;
+  border-radius: 10px;
+  margin-top: 10px;
+  min-width: 90%;
 }
 
 #entrenamient-form{
@@ -21,12 +66,53 @@
 }
 
 #entrenamient-form select{
-  width: 100%;
+  width: 95%;
+  height: 30px;
+  border: solid var(--color-primario) 1px;
+  font-size: 1rem;
 }
 #cont-ejercicios{
   display: flex;
   flex-direction: column;
 }
+
+#cont-input{
+  display: flex;
+}
+
+.input-group{
+  display: flex;
+  align-items: center;
+}
+
+.input-group input{
+  margin-top: 5px;
+  width: 70%;
+  height: 30px;
+  font-size: 1rem;
+  border: solid var(--color-primario) 1px;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+.input-group span{
+  font-size: 1.7rem;
+}
+
+#addBtn{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40%;
+  height: 30px;
+  background-color: var(--color-secundario);
+  color: #ffffff;
+  border-radius: 15px;
+  font-size: 1.2rem;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+
 
 /* banner azul - información   */
 .banner{
@@ -46,4 +132,30 @@
 }
 .banner span{
     display: flex;
+}
+
+
+/* Listado de ejercicios cargados de la base de datos  */
+.div-tren-superior{
+  display: flex;
+  font-size: 1.2rem;
+  padding: 5px 0;
+  border-bottom: solid var(--color-base-dias) 1px;
+  background-color: blueviolet;
+}
+
+.div-tren-inferior{
+  display: flex;
+  font-size: 1.2rem;
+  padding: 5px 0;
+  border-bottom: solid var(--color-base-dias) 1px;
+  background-color: rgb(240, 6, 123);
+ 
+}
+#cont-trenSuperior{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 10px 0;
+
 }
