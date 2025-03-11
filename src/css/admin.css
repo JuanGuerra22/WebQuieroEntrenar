@@ -61,15 +61,18 @@
   min-width: 90%;
 }
 
-#entrenamient-form{
+#entrenamiento-form{
  width: 90%;
 }
 
-#entrenamient-form select{
+#entrenamiento-form select{
   width: 95%;
-  height: 30px;
+  height: 40px;
   border: solid var(--color-primario) 1px;
-  font-size: 1rem;
+  font-size: 1.3rem;
+}
+#entrenamiento-form label{
+  font-size: 1.3rem;
 }
 #cont-ejercicios{
   display: flex;
@@ -88,8 +91,8 @@
 .input-group input{
   margin-top: 5px;
   width: 70%;
-  height: 30px;
-  font-size: 1rem;
+  height: 40px;
+  font-size: 1.3brem;
   border: solid var(--color-primario) 1px;
   border-radius: 5px;
   box-sizing: border-box;
@@ -107,7 +110,7 @@
   background-color: var(--color-secundario);
   color: #ffffff;
   border-radius: 15px;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   gap: 5px;
   margin-top: 5px;
 }

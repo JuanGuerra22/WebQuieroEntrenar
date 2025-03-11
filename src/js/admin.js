@@ -1,6 +1,7 @@
 import { auth, db } from "./firebase.js";
-import { doc, getDoc, collection, addDoc, onSnapshot} from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
+import { doc, getDoc, deleteDoc, addDoc, collection, onSnapshot, } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import './cerrar-sesion.js';
 
 
 
@@ -182,12 +183,22 @@ const mostrarEjercicios = () =>{
                 <span class="material-symbols-outlined" onclick="eliminarEjercicio('${ejercicioId}')">delete</span>
             `;
             contTrenInferior.appendChild(divTrenInferior);
-            }
-
-             
+            }  
         });
     });
+     
 }
+        // Función para eliminar un ejercicio
+        const eliminarEjercicio = async (id) => {
+            if (confirm("¿Seguro que quieres eliminar este ejercicio?")) {
+                await deleteDoc(doc(db, "ejercicios", id));
+                console.log("Ejercicio eliminado correctamente.");
+            }
+        };  
+
+ 
 
 // Iniciar la función para mostrar ejercicios
 mostrarEjercicios();
+// Hacer las funciones accesibles globalmente
+window.eliminarEjercicio = eliminarEjercicio;
