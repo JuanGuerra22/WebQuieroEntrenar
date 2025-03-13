@@ -7,6 +7,9 @@
     <!-- Mi CSS -->
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/css/admin.css">
+    <link rel="stylesheet" href="src/css/components.css">
+    <!-- Toastify -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- importa los iconos desde google icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="icon" href="src/img/favicon.ico" type="image/x-icon">
@@ -83,11 +86,20 @@
         <a href="#"><span class="material-symbols-outlined">construction</span>Armar Entrenamientos</a>
     </div>
 
+    <!-- ---------------------------Modal de confirmación----------------- -->
+     <div id="modal-confirm" class="cont-modal">
+        <div class="contenido-modal">
+            <h2 id="mensaje-modal">¿Estás seguro?</h2>
+            <div class="botones-modal">
+                <button id="cancelar-btn">Cancelar</button>
+                <button id="aceptar-btn">Aceptar</button>
+            </div>
+        </div>
+     </div>
     
-    
 
 
-
-   <script src="src/js/admin.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="src/js/admin.js" type="module"></script>
 </body>
 </html>

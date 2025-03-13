@@ -2,6 +2,7 @@ import { auth, db } from "./firebase.js";
 import { doc, getDoc, deleteDoc, addDoc, collection, onSnapshot, } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import './cerrar-sesion.js';
+import { mensajes } from "./mensajes.js";
 
 
 
@@ -108,6 +109,7 @@ function AddInput(){
                 const userSnap = await getDoc(userRef);
 
                 if (!userSnap.exists() || userSnap.data().rol !== "admin") {
+                    mensajes("⛔ No tienes permisos para agregar ejercicios.", "fail");
                     console.error("⛔ No tienes permisos para agregar ejercicios.");
                     return;
                 }
@@ -122,17 +124,18 @@ function AddInput(){
                     enfoque: enfoqueEjer.value
                 });
     
-                console.log("✅ Ejercicio agregado:", nombreEjercicio);
+                mensajes("✅ Ejercicio agregado con éxito... ");
     
                 // Eliminar input después de guardar
                 contInputsIcons.removeChild(contenedor);
                 inputActivo = false;
     
             } catch (error) {
+                mensajes("⛔ Error al guardar el ejercicio:", "fail");
                 console.error("⛔ Error al guardar el ejercicio:", error);
             }
         } else {
-            alert("⚠️ El nombre del ejercicio no puede estar vacío.");
+            mensajes("⚠️ El nombre del Ejercicio NO puede estar vacío", "fail");
         }
     });
     
@@ -169,7 +172,8 @@ const mostrarEjercicios = () =>{
              divTrenSuperior.innerHTML = `
                 <p>${ejercicio.nombre}</p>
                 <span class="material-symbols-outlined" onclick="editarEjercicio('${ejercicioId}', '${ejercicio.nombre}')">edit</span>
-                <span class="material-symbols-outlined" onclick="eliminarEjercicio('${ejercicioId}')">delete</span>
+                <span class="material-symbols-outlined" onclick="mostrarModal('¿Estás seguro que deseas Eliminarlo?', () => { eliminarEjercicio('${ejercicioId}'); }, cancelarEliminar)">delete</span>
+                <input type="text" class="hidden">
             `;
              contTrenSuperior.appendChild(divTrenSuperior);
 
@@ -180,7 +184,7 @@ const mostrarEjercicios = () =>{
              divTrenInferior.innerHTML = `
                 <p>${ejercicio.nombre}</p>
                 <span class="material-symbols-outlined" onclick="editarEjercicio('${ejercicioId}', '${ejercicio.nombre}')">edit</span>
-                <span class="material-symbols-outlined" onclick="eliminarEjercicio('${ejercicioId}')">delete</span>
+                <span class="material-symbols-outlined" onclick="mostrarModal('¿Estás seguro que deseas Eliminarlo?', () => { eliminarEjercicio('${ejercicioId}'); }, cancelarEliminar)">delete</span>
             `;
             contTrenInferior.appendChild(divTrenInferior);
             }  
@@ -188,17 +192,49 @@ const mostrarEjercicios = () =>{
     });
      
 }
+
         // Función para eliminar un ejercicio
-        const eliminarEjercicio = async (id) => {
-            if (confirm("¿Seguro que quieres eliminar este ejercicio?")) {
+        async function eliminarEjercicio (id) {
                 await deleteDoc(doc(db, "ejercicios", id));
-                console.log("Ejercicio eliminado correctamente.");
-            }
-        };  
+                mensajes("✅ Ejercicio Eliminado Correctamente");
+        };
+
+        const cancelarEliminar = ()=>{
+            console.log("no se eliminó")
+        }
 
  
 
-// Iniciar la función para mostrar ejercicios
-mostrarEjercicios();
+    // Iniciar la función para mostrar ejercicios
+    mostrarEjercicios();
 // Hacer las funciones accesibles globalmente
 window.eliminarEjercicio = eliminarEjercicio;
+window.mostrarModal = mostrarModal;
+window.cancelarEliminar = cancelarEliminar;
+
+// Modal para confimación 
+function mostrarModal(mensajeTexto, callbackAceptar, callbackCancelar){
+    
+    const modalConfirm = document.getElementById('modal-confirm');
+    const mensajeModal = document.getElementById('mensaje-modal');
+    const aceptarBtn = document.getElementById('aceptar-btn');
+    const cancelarBtn = document.getElementById('cancelar-btn');
+
+    mensajeModal.textContent = mensajeTexto;
+    modalConfirm.style.display = "flex";
+
+    aceptarBtn.onclick = function(){
+        modalConfirm.style.display = "none";
+        if(callbackAceptar){
+            callbackAceptar();
+        }
+    };
+
+    cancelarBtn.onclick = function(){
+        modalConfirm.style.display = "none";
+        if(callbackCancelar){
+            callbackCancelar();
+        }
+    };
+}
+

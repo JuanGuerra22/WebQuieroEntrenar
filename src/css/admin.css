@@ -70,6 +70,7 @@
   height: 40px;
   border: solid var(--color-primario) 1px;
   font-size: 1.3rem;
+  margin-top: 7px;
 }
 #entrenamiento-form label{
   font-size: 1.3rem;
@@ -92,7 +93,7 @@
   margin-top: 5px;
   width: 70%;
   height: 40px;
-  font-size: 1.3brem;
+  font-size: 1.3rem;
   border: solid var(--color-primario) 1px;
   border-radius: 5px;
   box-sizing: border-box;
@@ -141,7 +142,7 @@
 /* Listado de ejercicios cargados de la base de datos  */
 .div-tren-superior{
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 5px 0;
   border-bottom: solid var(--color-base-dias) 1px;
   background-color: blueviolet;
@@ -149,7 +150,7 @@
 
 .div-tren-inferior{
   display: flex;
-  font-size: 1.2rem;
+  font-size: 1.3rem;
   padding: 5px 0;
   border-bottom: solid var(--color-base-dias) 1px;
   background-color: rgb(240, 6, 123);
@@ -162,3 +163,62 @@
   margin: 10px 0;
 
 }
+
+
+/* -----------------Modal de confirmacion -------------------- */
+.cont-modal{
+  display: none;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 1;
+  background-color: #0000007c;
+}
+.contenido-modal{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  background-color: #ffffff;
+  border-radius: 10px;
+}
+
+.contenido-modal h2{
+  margin-top: 20px;
+  padding: 0 10px;
+  width: 100%;
+  text-align: center;
+}
+.botones-modal{
+  display: flex;
+  justify-content: center;
+  width: 80%;
+  margin: 20px auto;
+  gap:20px
+}
+
+#aceptar-btn{
+  width: 40%;
+  height: 40px;
+  background-color: var(--color-primario);
+  border: none;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  box-shadow: 2px 2px 5px #0000007a;
+}
+
+#cancelar-btn{
+  width: 40%;
+  height: 40px;
+  border: solid var(--color-primario) 1px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  box-shadow: 2px 2px 5px #0000007a;
+}
+/* -----------------FINAL Modal de confirmacion -------------------- */
