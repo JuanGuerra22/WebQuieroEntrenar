@@ -1,6 +1,7 @@
 import { doc, getDoc, updateDoc } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 import { auth, db } from "./firebase.js";
 import './cerrar-sesion.js';
+import {adminVerificar} from './script.js';
 
 
 const spinner = document.getElementById("spinner-container");
@@ -34,7 +35,7 @@ auth.onAuthStateChanged(async (user) => {
 
         if (userSnap.exists()) {
             const data = userSnap.data();
-
+            adminVerificar(user)
             // Mostrar datos en la interfaz
             email.textContent = data.email || "No se encuentra tu Email";
 

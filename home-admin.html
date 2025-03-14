@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="src/css/styles.css">
     <link rel="stylesheet" href="src/css/admin.css">
     <link rel="stylesheet" href="src/css/components.css">
+    <link rel="stylesheet" href="src/css/modals.css">
     <!-- Toastify -->
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <!-- importa los iconos desde google icon -->
@@ -17,46 +18,41 @@
     <title>Home Administrador</title>
 </head>
 <body>
-
-     <!-- Barra de navegación -->
+   
+        <!-- Barra de navegación -->
      <section class="navbar-container">
         <nav class="navbar">
             <ul>
               <li><a href="home-principal.html"><span class="material-symbols-outlined">home</span>Home</a></li>
               <li><a href="perfil.html"><span class="material-symbols-outlined">person</span>Perfil</a></li>
-              <li><a href="informe.html"><span class="material-symbols-outlined">docs</span>Informe</a></li>
+              <li id="admin"></li>
+              <li><a href="#"><span class="material-symbols-outlined">docs</span>Informe</a></li>
               <li><a href="#" id="salir-icon" ><span class="material-symbols-outlined">output_circle</span>Salir</a></li>
             </ul>
         </nav>
     </section>
 
-    <!-- Logo -->
-    <div class="logo-izq">
-        <img src="src/img/logo01.png" alt="Gym App Logo" class="logo top">
-    </div>
-
-
-
 <!-- --------------Banner----------- -->
     <div class="banner">
-        <h2 id="nombre-admin">--------Nombre-------</h2>
+        <!-- Logo -->
+        <div class="logo-izq">
+            <img src="src/img/logo01.png" alt="Gym App Logo" class="logo top">
+        </div>
+
+        <!-- Permite mostrar el nombre de usuario  -->
+        <h2 id="nombre-admin">Cargando Nombre...</h2>
         <span class="material-symbols-outlined">shield_person 
             <p id="email-admin"></p>
         </span>
-        <!-- Permite mostrar el nombre de usuario  -->
-        <div class="cont-usuario">
-            <div class="nombre-usuario">
-            <p id="user-name"></p>
-        </div>
-        </div>
+        
     </div>
 <!-- -----------------------Botones Admin---------------- -->
     <div class="cont-botones">
-        <a href="#" id="add-exercise"><span class="material-symbols-outlined icon-circle">add_circle</span>Agregar Nuevos Ejercicios</a>
-
+        
+        <a id="btn-exercises" class="training-btn" href="#" ><span class="material-symbols-outlined icon-circle">add_circle</span>Agregar Nuevos Ejercicios</a>
         <!-- AGREGAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
 
-   <section id="admin-section" class="hidden">
+   <section id="cont-exercises" class="cont-entrenos">
     <form id="entrenamiento-form">
         <label for="enfoque">Escoge un enfoque</label>
         <select name="enfoque" id="enfoque">
@@ -65,7 +61,7 @@
             <option value="tren-inferior">Tren Inferior</option>
         </select>
         
-        <div id="cont-ejercicios" style="display: none;">
+        <div id="cont-ejercicios">
             <div id="cont-inputs-icons">
                 <!-- Aqui se insertan los inputs -->
             </div>
@@ -83,7 +79,95 @@
     </form>
    </section>
 
-        <a href="#"><span class="material-symbols-outlined">construction</span>Armar Entrenamientos</a>
+        <a id="btn-training" class="training-btn" href="#"><span class="material-symbols-outlined">construction</span>Armar Entrenamientos</a>
+         <!-- ARMAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
+        <section id="cont-training" class="cont-entrenos">
+            <form id="entrenamientos-form">
+
+                <div class="cont-nivel-frec">
+                    <div class="niveles">
+                    <label for="nivel">Nivel: </label>
+                    <select name="nivel" id="niveles">
+                        <option value=""></option>
+                        <option value="basico">Básico</option>
+                        <option value="intermedio">Intermedio</option>
+                        <option value="avanzado">Avanzado</option>
+                    </select>
+                    </div>
+
+                    <div class="frecuencia">
+                    <label for="frecuencia">Frecuencia de entrenamiento: </label>
+                    <select name="frecuencia" id="frecuencia">
+                        <option value=""></option>
+                        <option value="tres-dias">3 Días</option>
+                        <option value="cuatro-dias">4 Días</option>
+                        <option value="cinco-dias">5 Días</option>
+                        <option value="seis-dias">6 Días</option>
+                    </select>                        
+                    </div>
+                </div>
+
+                <div class="cont-gen-enf">
+                    <div class="genero">
+                    <label for="genero">Genero: </label>
+                    <select name="genero" id="genero">
+                        <option value=""></option>
+                        <option value="mujere">Mujer</option>
+                        <option value="hombre">Hombre</option>
+                    </select>
+                    </div>
+
+                    <div class="enfoque">
+                    <label for="enfoque">Enfoque: </label>
+                    <select name="enfoque" id="enfoque">
+                        <option value=""></option>
+                        <option value="tren-superior">Tren Superior</option>
+                        <option value="tren-inferior">Tren Inferior</option>
+                    </select>
+                    </div>
+                </div>
+                
+                <label for="objetivos">Objetivo de entrenamiento</label>
+                <select name="objetivos" id="objetivo">
+                    <option value=""></option>
+                    <option value="recomposicion">Recomposición corporal </option>
+                    <option value="tren-superior">Aumento de masa muscular  Tren Superior</option>
+                    <option value="tren-inferior">Aumento de masa muscular  Tren Inferior</option>
+                </select>
+
+                
+                
+                <div class="cont-sem-dia">
+                    <div class="semanas">
+                        <label for="semanas">Semana de entrenamiento</label>
+                        <input name="semanas" id="numero-semanas" type="number" max="16">
+                    </div>
+                    
+                    <div class="dias">
+                        <label for="dias">Día de entrenamiento</label>
+                        <select name="dias" id="dias">
+                            <option value=""></option>
+                            <option value="lunes">Lunes</option>
+                            <option value="martes">Martes</option>
+                            <option value="miercoles">Míercoles</option>
+                            <option value="jueves">Jueves</option>
+                            <option value="viernes">Viernes</option>
+                            <option value="sabado">Sábado</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                
+
+                <label for="ejercicios">Ejercicios: </label>
+                <input type="text" placeholder=" Buscar">
+                <select name="ejerciicos" id="ejercicios">
+                    <option value=""></option>
+                    <option value="">Aqui van los ejercicios</option>
+                </select>
+            </form>
+        </section>
+
     </div>
 
     <!-- ---------------------------Modal de confirmación----------------- -->
@@ -96,6 +180,8 @@
             </div>
         </div>
      </div>
+
+     
     
 
 

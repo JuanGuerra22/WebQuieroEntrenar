@@ -1,8 +1,15 @@
 input{
-
     height: 40px;
     font-size: 1.3rem;
     border: solid var(--color-primario) 1px;
     border-radius: 5px;
     box-sizing: border-box;
+}
+
+label{
+    font-size: 1.3rem;
+}
+
+select{
+    font-size: 1.3rem;
 }

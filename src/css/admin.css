@@ -6,12 +6,35 @@
     --color-claro-dias: #F5F5F5;
   }
 
-  /*-------------------------Botones Admin -----------------------*/
+/* banner azul - información   */
+.banner{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  width: 100%;
+  height: 200px;
+  background-color: var(--color-primario);
+}
+.banner h2{
+  font-size: 2.1rem;
+}
+.banner p{
+  font-size: 1.5rem;
+}
+.banner span{
+  display: flex;
+}
+/* --------------------------  */
+
+
+/*-------------------------Botones Admin -----------------------*/
 .cont-botones{
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
+  height: auto;
   margin-top: 20px;
 }
 
@@ -41,20 +64,31 @@
   border-radius: 100%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5), -2px -2px 10px rgba(255, 255, 255, 0.5);
 }
+/*------------------------------------------------*/
 
 
-/* ------------------FORMULARIO DE ENTRENAMIENTOS-----------------------------  */
+/* ------------------FORMULARIO DE EJERCICIOS-----------------------------  */
+.cont-entrenos.visible{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cont-entrenos{
+  display: none;
+}
+
+
 .hidden{
   display: none;
- 
 }
 .visible{
   display: flex;
   flex-direction: column;
+  justify-content: center;
 }
 
-#admin-section{
-  align-items: center;
+#cont-exercises{
   background-color: #f1f1f1d0;
   border-radius: 10px;
   margin-top: 10px;
@@ -72,9 +106,7 @@
   font-size: 1.3rem;
   margin-top: 7px;
 }
-#entrenamiento-form label{
-  font-size: 1.3rem;
-}
+
 #cont-ejercicios{
   display: flex;
   flex-direction: column;
@@ -118,25 +150,6 @@
 
 
 
-/* banner azul - información   */
-.banner{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 100px;
-    width: 100%;
-    height: 200px;
-    background-color: var(--color-primario);
-}
-.banner h2{
-    font-size: 2.1rem;
-}
-.banner p{
-    font-size: 1.5rem;
-}
-.banner span{
-    display: flex;
-}
 
 
 /* Listado de ejercicios cargados de la base de datos  */
@@ -164,61 +177,74 @@
 
 }
 
+/* ---------------------ARMAR ENTRENAMIENTOS------------------- */
 
-/* -----------------Modal de confirmacion -------------------- */
-.cont-modal{
-  display: none;
+#cont-training{
   align-items: center;
-  justify-content: center;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  z-index: 1;
-  background-color: #0000007c;
+  width: 90%;
+  background-color: #f1f1f1d0;
+  margin-top: 10px;
+  padding-top: 10px;
+  padding-bottom: 70px;
+  border-radius: 10px;
 }
-.contenido-modal{
+
+#entrenamientos-form{
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 80%;
-  background-color: #ffffff;
-  border-radius: 10px;
+  width: 90%;
+  gap: 10px;
 }
 
-.contenido-modal h2{
-  margin-top: 20px;
-  padding: 0 10px;
-  width: 100%;
+#cont-training select{
+  height: 40px;
+  border: solid 1px var(--color-primario);
+}
+.cont-nivel-frec{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+}
+.niveles{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding-top: 25px;
+}
+.frecuencia{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
   text-align: center;
 }
-.botones-modal{
+
+.cont-gen-enf{
   display: flex;
-  justify-content: center;
-  width: 80%;
-  margin: 20px auto;
-  gap:20px
+  gap: 5px;
+}
+.genero{
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+.enfoque{
+  display: flex;
+  flex-direction: column;
+  width: 40%;
 }
 
-#aceptar-btn{
-  width: 40%;
-  height: 40px;
-  background-color: var(--color-primario);
-  border: none;
-  border-radius: 10px;
-  font-size: 1.3rem;
-  box-shadow: 2px 2px 5px #0000007a;
+.cont-sem-dia{
+  display: flex;
+  gap: 5px;
 }
-
-#cancelar-btn{
-  width: 40%;
-  height: 40px;
-  border: solid var(--color-primario) 1px;
-  background-color: #ffffff;
-  border-radius: 10px;
-  font-size: 1.3rem;
-  box-shadow: 2px 2px 5px #0000007a;
+.semanas{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
 }
-/* -----------------FINAL Modal de confirmacion -------------------- */
+.dias{
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}

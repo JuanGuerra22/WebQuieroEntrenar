@@ -3,7 +3,7 @@ import { doc, getDoc, deleteDoc, addDoc, collection, onSnapshot, } from "https:/
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
 import './cerrar-sesion.js';
 import { mensajes } from "./mensajes.js";
-
+import{adminVerificar} from "./script.js"
 
 
 //verifico si el usuario es administrador 
@@ -26,18 +26,36 @@ auth.onAuthStateChanged(async (user) =>{
             console.log("Rol del usuario:", data.rol);
         } else {
             console.log("El usuario no es administrador.");
-            adminSection.style.display = "none";
         } 
 });
 
+// Mostrar y ocultar la informacion de los botenes-----------------
 
-const addExercise = document.getElementById('add-exercise');
-const adminSection  = document.getElementById('admin-section')
+const trainingBtn = document.querySelectorAll('.training-btn');
+const contEntrenos = document.querySelectorAll('.cont-entrenos')
 
-addExercise.addEventListener('click', ()=>{ 
-  adminSection.classList.toggle('visible')
+trainingBtn.forEach((btn) =>{
+    btn.addEventListener('click', () =>{
+        const boton = btn.id.split('-')[1]; //Obtiene el ID del botón (btn.id) y lo divide en un array usando el guion - como separador. Luego, toma el segundo elemento del array (índice 1) y lo almacena en la constante boton. 
+        const btnActual = document.getElementById(`cont-${boton}`); //Crea un ID dinámico usando la constante boton y selecciona el elemento HTML correspondiente usando document.getElementById(). Se asume que los IDs de los contenedores tienen el formato cont-algo, donde algo coincide con el segundo elemento del ID del botón.
+
+        if(btnActual.classList.contains('visible')){
+            btnActual.classList.remove('visible');
+            return;
+        }
+
+         // Ocultamos todas las listas de ejercicios
+        contEntrenos.forEach((entrenos)=>{
+            entrenos.classList.remove('visible');
+        })
+
+        if(btnActual){
+            btnActual.classList.add('visible');
+        }
+    });
 });
 
+// ----------------------------------------------------------------
 
 //Escucha el cambio del Select 
 const enfoqueEjer = document.getElementById('enfoque');

@@ -1,25 +1,29 @@
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-auth.js";
+import { doc, getDoc, } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-firestore.js";
 import { auth, db} from "./firebase.js";
 import './cerrar-sesion.js';
 
 
 
-// Verificar el estado de autenticación
-onAuthStateChanged(auth, (user) => {
-  if (!user) {
-      window.location.href = "login.html"; // Redirigir al login si no está autenticado
-  } 
-});
-
-// Añadir funcionalidad de expansión a las tarjetas
-const cards = document.querySelectorAll('.card');
-
-cards.forEach(card => {
-  card.addEventListener('click', () => {
-    // Alterna la clase 'card-expandida' al hacer clic
-    card.classList.toggle('card-expandida');
+// Verificar el estado de autenticación y si es admin
+export const adminVerificar =  auth.onAuthStateChanged(async (user) => {
+    if (!user) {
+        window.location.href = "login.html"; // Redirigir al login si no está autenticado
+      return;
+    } 
+    const admin = document.getElementById('admin');
+    const userRef = doc(db, "usuarios", user.uid);
+    const userSnap = await getDoc(userRef);
+  
+    if(userSnap.exists() && userSnap.data().rol === "admin"){
+      admin.innerHTML = `
+        <a id="admin-btn" href="home-admin.html"><span class="material-symbols-outlined">manage_accounts</span>Admin</a>
+      `
+    }
+  
   });
-});
+
+
 
 // Seleccionamos todas las tarjetas (botones) y las listas de ejercicios
 const buttons = document.querySelectorAll('.card');
@@ -50,10 +54,17 @@ buttons.forEach((button) => {
   });
 });
 
+
+
+
 //para mostrar el nombre del usuario en la pagina principal 
-onAuthStateChanged(auth, (user) => {
+ auth.onAuthStateChanged(async (user) => {
   if (user) {
-      document.getElementById("user-name").textContent = `Bienvenido, ${user.email}`;
+      const userName = document.getElementById("user-name");
+      if(userName){
+        userName.textContent = `Bienvenido, ${user.email}`;
+      }
+      
   } else {
       window.location.href = "login.html";
   }
