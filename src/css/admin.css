@@ -160,6 +160,9 @@
   border-bottom: solid var(--color-base-dias) 1px;
   background-color: blueviolet;
 }
+.div-tren-superior p{
+  padding-left: 10px;
+}
 
 .div-tren-inferior{
   display: flex;
@@ -228,10 +231,23 @@
   flex-direction: column;
   width: 60%;
 }
+
+.container-enf-musc{
+  display: flex;
+}
+.cont-enfoque{
+  width: 50%;
+}
 .enfoque{
   display: flex;
   flex-direction: column;
   width: 40%;
+}
+#cont-superior{
+  width: 50%;
+}
+#cont-inferior{
+  width: 50%;
 }
 
 .cont-sem-dia{
@@ -241,10 +257,10 @@
 .semanas{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 30%;
 }
 .dias{
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 70%;
 }

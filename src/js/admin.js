@@ -59,21 +59,59 @@ trainingBtn.forEach((btn) =>{
 
 //Escucha el cambio del Select 
 const enfoqueEjer = document.getElementById('enfoque');
-
-const contEjercicios = document.getElementById('cont-ejercicios');
+const contSuperior = document.getElementById('cont-superior');
+const contInferior = document.getElementById('cont-inferior')
+const selectSuperior = document.getElementById('musculos-superior');
+const selectInferior = document.getElementById('musculos-inferior');
 const addBtn = document.getElementById('addBtn');
 const contAddBtn = document.getElementById('cont-addBtn');
 
 enfoqueEjer.addEventListener("change", () =>{
-    if(enfoqueEjer.value !== ''){
-      
-        contEjercicios.style.display = "flex";
-        contAddBtn.classList.remove('hidden')
-    }   else{
-        contAddBtn.classList.add('hidden')
-    }
+
+    if(enfoqueEjer.value === ''){
+        contSuperior.classList.add('hidden');
+        contInferior.classList.add('hidden');
+
+    } else if(enfoqueEjer.value === 'tren-superior'){
+        contSuperior.classList.remove('hidden');
+        contInferior.classList.add('hidden');
+        selectInferior.value = '';
+        selectSuperior.value = '';
+        contAddBtn.classList.add('hidden');
+
+
+    }else if(enfoqueEjer.value === 'tren-inferior'){
+        contInferior.classList.remove('hidden')
+        contSuperior.classList.add('hidden');
+        selectInferior.value = '';
+        selectSuperior.value = '';
+        contAddBtn.classList.add('hidden');
+
+    }else{
+        contAddBtn.classList.add('hidden');
+    } 
     
 });
+
+contSuperior.addEventListener('change', () => {
+    if(selectSuperior.value === ''){
+        contAddBtn.classList.add('hidden');
+    } else{
+        contAddBtn.classList.remove('hidden');
+    }
+});
+
+contInferior.addEventListener('change', () => {
+    if(selectInferior.value === ''){
+        contAddBtn.classList.add('hidden');
+    }else{
+        contAddBtn.classList.remove('hidden');
+    }
+});
+//Escucha el cambio del Select 
+
+
+
 
 const contInputsIcons = document.getElementById('cont-inputs-icons');
 
@@ -132,14 +170,14 @@ function AddInput(){
                     return;
                 }
     
-                // Referencia correcta a la subcolección "lista" dentro de "tren_superior"
                 const listaRef = collection(db, "ejercicios");
                 console.log(listaRef.path);
     
                 // Agregar el ejercicio a Firestore
                 await addDoc(listaRef, {
                     nombre: nombreEjercicio,
-                    enfoque: enfoqueEjer.value
+                    enfoque: enfoqueEjer.value,
+                    musculo: selectSuperior.value || selectInferior.value
                 });
     
                 mensajes("✅ Ejercicio agregado con éxito... ");
@@ -184,16 +222,16 @@ const mostrarEjercicios = () =>{
             const ejercicioId = doc.id;
 
             if(ejercicio.enfoque === "tren-superior"){
-                // Crear el div para cada ejercicio
-             const divTrenSuperior = document.createElement("div");
-             divTrenSuperior.classList.add("div-tren-superior");
-             divTrenSuperior.innerHTML = `
-                <p>${ejercicio.nombre}</p>
-                <span class="material-symbols-outlined" onclick="editarEjercicio('${ejercicioId}', '${ejercicio.nombre}')">edit</span>
-                <span class="material-symbols-outlined" onclick="mostrarModal('¿Estás seguro que deseas Eliminarlo?', () => { eliminarEjercicio('${ejercicioId}'); }, cancelarEliminar)">delete</span>
-                <input type="text" class="hidden">
-            `;
-             contTrenSuperior.appendChild(divTrenSuperior);
+                // Crear el div para cada ejercicio            
+                const divTrenSuperior = document.createElement("div");
+                divTrenSuperior.classList.add("div-tren-superior");
+                divTrenSuperior.innerHTML = `
+                    <p>${ejercicio.nombre}</p>
+                    <span class="material-symbols-outlined" onclick="editarEjercicio('${ejercicioId}', '${ejercicio.nombre}')">edit</span>
+                    <span class="material-symbols-outlined" onclick="mostrarModal('¿Estás seguro que deseas Eliminarlo?', () => { eliminarEjercicio('${ejercicioId}'); }, cancelarEliminar)">delete</span>
+                    <input type="text" class="hidden">
+                `;
+                contTrenSuperior.appendChild(divTrenSuperior);
 
             } else if(ejercicio.enfoque === "tren-inferior"){
                  // Crear el div para cada ejercicio
@@ -211,24 +249,26 @@ const mostrarEjercicios = () =>{
      
 }
 
-        // Función para eliminar un ejercicio
-        async function eliminarEjercicio (id) {
-                await deleteDoc(doc(db, "ejercicios", id));
-                mensajes("✅ Ejercicio Eliminado Correctamente");
-        };
+    // Función para eliminar un ejercicio
+    async function eliminarEjercicio (id) {
+        await deleteDoc(doc(db, "ejercicios", id));
+        mensajes("✅ Ejercicio Eliminado Correctamente");
+    };
 
-        const cancelarEliminar = ()=>{
-            console.log("no se eliminó")
-        }
+    const cancelarEliminar = ()=>{
+        console.log("No se pudo elimiar el Ejercicio")
+    }
 
+     // Iniciar la función para mostrar ejercicios
+     mostrarEjercicios();
  
 
-    // Iniciar la función para mostrar ejercicios
-    mostrarEjercicios();
+   
 // Hacer las funciones accesibles globalmente
 window.eliminarEjercicio = eliminarEjercicio;
 window.mostrarModal = mostrarModal;
 window.cancelarEliminar = cancelarEliminar;
+
 
 // Modal para confimación 
 function mostrarModal(mensajeTexto, callbackAceptar, callbackCancelar){

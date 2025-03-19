@@ -49,18 +49,46 @@
 <!-- -----------------------Botones Admin---------------- -->
     <div class="cont-botones">
         
-        <a id="btn-exercises" class="training-btn" href="#" ><span class="material-symbols-outlined icon-circle">add_circle</span>Agregar Nuevos Ejercicios</a>
-        <!-- AGREGAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
-
-   <section id="cont-exercises" class="cont-entrenos">
+    <!-- AGREGAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
+    <a id="btn-exercises" class="training-btn" href="#" ><span class="material-symbols-outlined icon-circle">add_circle</span>Agregar Nuevos Ejercicios</a>
+    <section id="cont-exercises" class="cont-entrenos">
     <form id="entrenamiento-form">
-        <label for="enfoque">Escoge un enfoque</label>
-        <select name="enfoque" id="enfoque">
-            <option></option>
-            <option value="tren-superior">Tren Superior</option>
-            <option value="tren-inferior">Tren Inferior</option>
-        </select>
-        
+        <div class="container-enf-musc">
+            <div class="cont-enfoque">
+                <label for="enfoque">Escoge un enfoque</label>
+                <select name="enfoque" id="enfoque">
+                    <option></option>
+                    <option value="tren-superior">Tren Superior</option>
+                    <option value="tren-inferior">Tren Inferior</option>
+                </select>
+            </div>
+            
+    
+           <div id="cont-superior" class="hidden">
+                <label for="musculos-superior">Músculo</label>
+                <select name="musculos-superior" id="musculos-superior">
+                    <option value=""></option>
+                    <option value="pecho">Pecho</option>
+                    <option value="espalda">Espalda</option>
+                    <option value="biceps">Biceps</option>
+                    <option value="triceps">Triceps</option>
+                    <option value="hombro">Hombro</option>
+                </select>
+           </div> 
+
+           <div id="cont-inferior" class="hidden">
+                <label for="musculos-inferior">Músculo</label>
+                <select name="musculos-inferior" id="musculos-inferior">
+                    <option value=""></option>
+                    <option value="cuadriceps">Cuadriceps</option>
+                    <option value="gluteos">Gluteos</option>
+                    <option value="femoral">Femoral</option>
+                    <option value="abductores">Abductores</option>
+                    <option value="pabtorrillas">Pantorrillas</option>
+                </select>
+            </div> 
+        </div>
+     
         <div id="cont-ejercicios">
             <div id="cont-inputs-icons">
                 <!-- Aqui se insertan los inputs -->
@@ -69,19 +97,28 @@
                 <span id="addBtn" class="material-symbols-outlined"> <p>Add Exercise</p> add_circle</span>
             </div>
         </div>
-        <div id="cont-trenSuperior">
-            <h2>Tren Superior</h2>
-        </div>
-        <div id="cont-trenInferior">
-            <h2>Tren Superior</h2>
-        </div>
+       
         
     </form>
-   </section>
+    </section>
 
-        <a id="btn-training" class="training-btn" href="#"><span class="material-symbols-outlined">construction</span>Armar Entrenamientos</a>
-         <!-- ARMAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
-        <section id="cont-training" class="cont-entrenos">
+    <!-- VISUALIZAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
+    <a id="btn-visualizar" class="training-btn" href="#" ><span class="material-symbols-outlined icon-circle">visibility</span>Visualizar Ejercicios</a>
+    <section id="cont-visualizar" class="cont-entrenos">
+        <div id="visualizar-trainer">
+            <div id="cont-trenSuperior">
+                <!-- Aqui se visualizan los ejercicios desde la BD -->
+            </div>
+            
+            <div id="cont-trenInferior">
+                <!-- Aqui se visualizan los ejercicios desde la BD -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ARMAR ENTRENAMIENTOS, SOLO ROL ADMIN -->
+    <a id="btn-training" class="training-btn" href="#"><span class="material-symbols-outlined">construction</span>Armar Entrenamientos</a>
+    <section id="cont-training" class="cont-entrenos">
             <form id="entrenamientos-form">
 
                 <div class="cont-nivel-frec">
@@ -119,7 +156,7 @@
 
                     <div class="enfoque">
                     <label for="enfoque">Enfoque: </label>
-                    <select name="enfoque" id="enfoque">
+                    <select name="enfoque" id="enfoque2">
                         <option value=""></option>
                         <option value="tren-superior">Tren Superior</option>
                         <option value="tren-inferior">Tren Inferior</option>
@@ -139,7 +176,7 @@
                 
                 <div class="cont-sem-dia">
                     <div class="semanas">
-                        <label for="semanas">Semana de entrenamiento</label>
+                        <label for="semanas">Semana</label>
                         <input name="semanas" id="numero-semanas" type="number" max="16">
                     </div>
                     
@@ -166,7 +203,7 @@
                     <option value="">Aqui van los ejercicios</option>
                 </select>
             </form>
-        </section>
+    </section>
 
     </div>
 
